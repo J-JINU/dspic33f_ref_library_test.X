@@ -23,10 +23,11 @@ extern "C" {
 //void initDma0Analog(void){
 //    DMA0CONbits.AMODE = 2; // Peripheral Indirect Addressing mode
 //    DMA0CONbits.MODE = 0; // Continuous, Ping-Pong modes disabled
+//    DMA0CONbits.DIR = 0; //Read from Peripheral address, write to DPSRAM address
 //    DMA0PAD = (volatile unsigned int)&ADC2BUF0; // ADCBUF에서 가지고옴
 //    DMA0CNT = 95;   //DMA로 몇 번(몇 번 - 1) 처리할 거?
 //    DMA0REQ = 21;   //뭐를 DMA로 처리할 거?
-//    DMA0STA = __builtin_dmaoffset(&ADC2buffer); //ADCBUF에서 가지고 온거를 여기 받음
+//    DMA0STA = __builtin_dmaoffset(&ADC1buffer); //ADCBUF에서 가지고 온거를 여기 받음
 //    IFS0bits.DMA0IF = 0;
 //    IEC0bits.DMA0IE = 1;
 //    DMA0CONbits.CHEN = 1;
