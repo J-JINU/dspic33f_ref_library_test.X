@@ -28,7 +28,15 @@ extern "C" {
 #define Baud115200			((Cpu_Cl/115200)/16)-1
     
     
-    
+void init_uart();
+void init_uart1();
+bool U1_TX_ready();
+void U1_transmit_byte(uint8_t byte);
+void U1_transmit_buf(uint8_t txDatabuf[], uint16_t size);
+void U1_transmit_object(uint16_t cmd, uint8_t * object_addr, uint16_t size);
+void UART1_SetRXInterruptHandler(void (* callbackHandler)(uint16_t, uint8_t*));
+
+void init_uart2();
 
 #ifdef	__cplusplus
 }

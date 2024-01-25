@@ -16,6 +16,9 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
+    
+/* DMA는 총 8개가 있음 0~7까지 */
+    
 /* EX ADC DMA */
 //void initDma0Analog(void){
 //    DMA0CONbits.AMODE = 2; // Peripheral Indirect Addressing mode
@@ -28,8 +31,9 @@ extern "C" {
 //    IEC0bits.DMA0IE = 1;
 //    DMA0CONbits.CHEN = 1;
 //}
+/* EX UART DMA */
+
     
-//SPI는 연구가 더 필요함
 /* DMA처리할 수 있는 목록임
 DMAXREQbits.IRQSEL: DMA Peripheral IRQ Number Select bits
 1001111 = DAC1 Left Data Output (DAC1)
@@ -38,7 +42,7 @@ DMAXREQbits.IRQSEL: DMA Peripheral IRQ Number Select bits
 0111100 = CODEC Transfer Done (DCI)
 0101101 = PMP Master Data Transfer (PMP)
 0100010 = RX Data Ready (ECAN1)
-0100001 = SPI2 Transfer Done (SPI2)
+0100001 = SPI2 Transfer Done (SPI2)SPI는 연구가 더 필요함
 0011111 = UART2 Transmitter (UART2TX)
 0011110 = UART2 Receiver (UART2RX)
 0001101 = ADC1 Convert Done (ADC1)

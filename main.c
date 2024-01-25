@@ -60,7 +60,7 @@
  */
 
 unsigned long millis = 0;
-
+char testmessage[] = "helloworld!!";
 void T1_callback(){
     millis++;
     if((millis&511)==0) _LATA0 = ~ _LATA0;
@@ -130,14 +130,12 @@ void setup(){
 
 void main() {
     setup();
-    c = 0;
-    SaveConfig();
-    ReadConfig();
-    int i = 1;
-    i = 3;
-    testflag = false;
+    for(int i = 0; i < 4160; i++)
+    {
+     Nop();
+    }
+    U1_transmit_buf(testmessage, sizeof(testmessage)/sizeof(char));
     while(true){
-//        committest();
     }
 }
 

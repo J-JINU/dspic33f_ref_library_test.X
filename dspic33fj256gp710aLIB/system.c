@@ -19,6 +19,7 @@ void init_system(){
     init_GPIO();
     init_timer();
     init_ADC();
+    init_uart();
 //    init_PWM1();
     init_SPI();
 //    init_DMA();

@@ -11,6 +11,20 @@ void init_DMA(){
 }
 
 void initDMA0(){
+//    DMA3REQ = 0x000C;	// Select UART1 Transmitter
+//	DMA3PAD = (volatile unsigned int) &U1TXREG;
+//	DMA3CONbits.AMODE = 0;
+//	DMA3CONbits.MODE  = 1;
+//	DMA3CONbits.DIR   = 1;
+//	DMA3CONbits.SIZE  = 1;	// Byte Transfer
+//
+//	DMA3CNT = 21;			// 22 DMA requests
+//	DMA3CONbits.CHEN  = 0;
+//	DMA3REQbits.FORCE = 1;
+//
+//	DMA3STA = __builtin_dmaoffset(DMA_TX_USART1);
+//	_DMA3IF  = 0;			// Clear DMA Interrupt Flag
+//	_DMA3IE  = 0;			// Clear DMA interrupt
     DMA0_OverflowCallbackRegister(DMA0_DefaultOverflowCallback);
     IFS0bits.DMA0IF = 0;
     IEC0bits.DMA0IE = 1;
@@ -20,12 +34,12 @@ void initDMA0(){
     DMA0CONbits.AMODE = 0;
     DMA0CONbits.MODE = 1;
     //DMAXREQ: DMA Channel X IRQ Select Register
-    DMA0REQbits.IRQSEL = 0b0100001; //SPI2
+    DMA0REQbits.IRQSEL = 0b0001100; //U1TX
     
     DMA0STA = __builtin_dmaoffset(TxBuffer);
-    DMA0PAD = (volatile unsigned int) &SPI2BUF;
+    DMA0PAD = (volatile unsigned int) &U1TXREG;
     
-    DMA0CNT = 15;
+    DMA0CNT = 15; // uart tx로 보낸 버퍼의 사이즈 - 1
     
     DMA0CONbits.CHEN = 1;
 }
