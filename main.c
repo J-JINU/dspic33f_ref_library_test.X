@@ -130,12 +130,16 @@ void setup(){
 
 void main() {
     setup();
-    for(int i = 0; i < 4160; i++)
+    for(int i = 0; i < 24160; i++)
     {
      Nop();
     }
-    U1_transmit_buf(testmessage, sizeof(testmessage)/sizeof(char));
+    
+    _LATG12 = 0;
+//    U1_transmit_buf(testmessage, sizeof(testmessage)/sizeof(char));
+    set_buffer(testmessage, sizeof(testmessage)/sizeof(char));
     while(true){
+        
     }
 }
 

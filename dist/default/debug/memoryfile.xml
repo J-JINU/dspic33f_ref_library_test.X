@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/default/production/dspic33f_ref_library_test.X.production.elf">
+  <executable name="dist/default/debug/dspic33f_ref_library_test.X.debug.elf">
     <memory name="data">
       <units>bytes</units>
       <length>30720</length>
-      <used>366</used>
-      <free>30354</free>
+      <used>446</used>
+      <free>30274</free>
     </memory>
     <memory name="program">
       <units>bytes</units>
       <length>261888</length>
-      <used>6003</used>
-      <free>255885</free>
+      <used>5994</used>
+      <free>255894</free>
     </memory>
   </executable>
 </project>

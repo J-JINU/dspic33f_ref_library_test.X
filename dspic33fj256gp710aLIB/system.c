@@ -22,7 +22,7 @@ void init_system(){
     init_uart();
 //    init_PWM1();
     init_SPI();
-//    init_DMA();
+    init_DMA();
     init_CAN();
 }
 

@@ -132,6 +132,7 @@ void init_GPIO(){
     _LATA5 = 1;
     _LATF12 = 1;
     _LATG9 = 1;
+    _LATG12 = 1;
 }
 
 void extIntPin(){

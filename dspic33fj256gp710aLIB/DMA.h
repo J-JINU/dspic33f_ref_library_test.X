@@ -33,8 +33,26 @@ extern "C" {
 //    DMA0CONbits.CHEN = 1;
 //}
 /* EX UART DMA */
+//void initDma0UART(void){
+//    IFS0bits.DMA0IF = 0;
+//    IEC0bits.DMA0IE = 0;
+//    // DMAXCON: DMA Channel X Control Register
+//    DMA0CONbits.SIZE = 1; // BYTE
+//    DMA0CONbits.DIR = 1; // Read from DPSRAM address, write to peripheral address
+//    DMA0CONbits.AMODE = 0;
+//    DMA0CONbits.MODE = 1;
+//    //DMAXREQ: DMA Channel X IRQ Select Register
+//    DMA0REQbits.IRQSEL = 0b0001100; //U1TX
+//    
+//    DMA0STA = __builtin_dmaoffset(TxBuffer);
+//    DMA0PAD = (volatile unsigned int) &U1TXREG;
+//    
+//    DMA0CNT = 15; // uart tx로 보낼 버퍼의 사이즈 - 1
+//    
+//    DMA0CONbits.CHEN = 0;
+//    DMA0REQbits.FORCE = 1;
+//}
 
-    
 /* DMA처리할 수 있는 목록임
 DMAXREQbits.IRQSEL: DMA Peripheral IRQ Number Select bits
 1001111 = DAC1 Left Data Output (DAC1)
@@ -72,6 +90,7 @@ DMAXREQbits.IRQSEL: DMA Peripheral IRQ Number Select bits
     
 void init_DMA();
 void initDMA0();
+void set_DMA0CNT(uint16_t size);
 void DMA0_OverflowCallbackRegister(void (* CallbackHandler)(void));
 void initDMA1();
 
