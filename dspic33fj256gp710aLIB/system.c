@@ -1,4 +1,5 @@
 #include "system.h"
+#include "DMA.h"
 
 /* MCU Environment SET */
 #define FCY 40000000UL
@@ -20,8 +21,12 @@ void init_system(){
     init_ADC();
 //    init_PWM1();
     init_SPI();
+//    init_DMA();
     init_CAN();
-    
+}
+
+void init_add_on(){ //기본기능 이외로 추가설치한 모듈들 활성화
+    init_Flash();
 }
 
 void setAbsoluteEnv() {

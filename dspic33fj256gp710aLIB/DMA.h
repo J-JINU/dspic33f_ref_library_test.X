@@ -29,6 +29,7 @@ extern "C" {
 //    DMA0CONbits.CHEN = 1;
 //}
     
+//SPI는 연구가 더 필요함
 /* DMA처리할 수 있는 목록임
 DMAXREQbits.IRQSEL: DMA Peripheral IRQ Number Select bits
 1001111 = DAC1 Left Data Output (DAC1)
@@ -53,16 +54,16 @@ DMAXREQbits.IRQSEL: DMA Peripheral IRQ Number Select bits
 0000000 = External Interrupt 0 (INT0)
  */
     
-uint8_t uart1_tx_buf[100];
-uint8_t uart1_rx_buf[100];
-uint8_t uart2_tx_buf[100];
-uint8_t uart2_rx_buf[100];
-uint8_t spi1_tx_buf[100];
-uint8_t spi1_rx_buf[100];
-uint8_t spi2_tx_buf[100];
-uint8_t spi2_rx_buf[100];
-uint16_t adc1_buf[100];
-uint16_t adc2_buf[100];
+//uint8_t uart1_tx_buf[100];
+//uint8_t uart1_rx_buf[100];
+//uint8_t uart2_tx_buf[100];
+//uint8_t uart2_rx_buf[100];
+//uint8_t spi1_tx_buf[100];
+//uint8_t spi1_rx_buf[100];
+//uint8_t spi2_tx_buf[100];
+//uint8_t spi2_rx_buf[100];
+//uint16_t adc1_buf[100];
+//uint16_t adc2_buf[100];
     
 void init_DMA();
 void initDMA0();

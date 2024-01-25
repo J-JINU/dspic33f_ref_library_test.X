@@ -19,6 +19,8 @@
 #define POWEROF2 8
 #define BYTE_PER_PAGE_ALLOW 256
 #define BYTE_PER_PAGE   264
+#define EEPROM_SECTOR_SIZE			250
+#define EEPROM_SECTOR_DATA			248	// 2byte bcc
 #define NUM_OF_PAGE     1024
 
 //Read Commands
@@ -97,7 +99,8 @@
 //#define STATUS_REGISTER_READ        0x57
 
 //Pin Control
-#define MEM_CS(x) (_LATG9=x)
+//#define eeprom_chipreset(IsHighLow)		(_LATG14=IsHighLow)
+#define FLASH_CS(x) (_LATG9=x)
 
 #ifdef	__cplusplus
 extern "C" {
@@ -109,11 +112,15 @@ extern "C" {
 #endif
 #define HiByte(X)   (unsigned char)((X>>8) & 0x00ff)
 #define LoByte(X)   (unsigned char)(X & 0x00ff)
-void initFlash();
-bool flashReady();
 
-bool flashRead(unsigned int *page, unsigned char *buffer);
-void flashWrite(unsigned int *page, unsigned char *buffer);
+
+void init_Flash();
+void flash_readwriteRegister(uint8_t (* CallbackHandler)(uint16_t));
+bool flash_status_rdy();
+bool flash_read_page(uint16_t wBlock, uint8_t *pBuffer);
+bool flash_write_page(uint16_t wBlock, uint8_t *pBuffer);
+void flash_commit(uint16_t wBlock, uint8_t *pBuffer);
+extern volatile uint8_t m_flash_buffer[EEPROM_SECTOR_SIZE];
 
 
 #endif	/* AT45DB021D_H */

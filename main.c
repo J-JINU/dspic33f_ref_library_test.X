@@ -5,6 +5,7 @@
  * Created on 2024년 1월 18일 (목), 오후 4:36
  */
 #include "dspic33fj256gp710aLIB/system.h"
+#include "dspic33fj256gp710aLIB/DMA.h"
 
 
 
@@ -58,27 +59,85 @@
  * 
  */
 
-uint16_t test;
 unsigned long millis = 0;
 
 void T1_callback(){
     millis++;
+    if((millis&511)==0) _LATA0 = ~ _LATA0;
+}
+bool testflag = false;
+int c = 0;
+void dma_testcallback(){
+    if(c++ == 247){
+        c = 0;
+        testflag = true;
+    }
 }
 
 void init_INT_callback(){
     Timer1_OverflowCallbackRegister(T1_callback);
+    DMA0_OverflowCallbackRegister(dma_testcallback);
+}
+
+void init_run_callback(){
+    flash_readwriteRegister(sendSPI2BUF);
+}
+
+uint16_t flashPage= 10;
+char test_char[] = "fuck!!fuck!!fuck!!fuck!!";
+char test_read_char[50];
+void SaveConfig()
+{
+	uint8_t nStep;
+	uint8_t Buffer[EEPROM_SECTOR_SIZE];
+	uint8_t *pBuffer;
+	pBuffer = (uint8_t*)&test_char;
+	for(nStep=0;nStep<(sizeof(test_char)) && (nStep<EEPROM_SECTOR_SIZE);nStep++) Buffer[nStep] = pBuffer[nStep];
+
+
+	if(flash_write_page(flashPage,Buffer));
+}
+
+void committest(){
+    if(testflag){
+        testflag = false;
+        uint8_t Buffer[EEPROM_SECTOR_SIZE];
+        flash_commit(flashPage,Buffer);
+    }
+}
+
+void ReadConfig()
+{
+	uint8_t nResult;
+	uint8_t nStep;
+	uint8_t Buffer[EEPROM_SECTOR_SIZE];
+	uint8_t *pBuffer;
+	
+	nResult = flash_read_page(flashPage,Buffer);
+	if(!nResult)
+	return;
+
+	pBuffer = (uint8_t*)&test_read_char;
+	for(nStep=0;nStep<(  sizeof(test_read_char) );nStep++) pBuffer[nStep] = Buffer[nStep];
 }
 
 void setup(){
     init_system();
     init_INT_callback();
+    init_run_callback();
+    init_add_on();
 }
 
 void main() {
     setup();
-    test = LATAbits.LATA0;
+    c = 0;
+    SaveConfig();
+    ReadConfig();
+    int i = 1;
+    i = 3;
+    testflag = false;
     while(true){
-        test = 0;
+//        committest();
     }
 }
 

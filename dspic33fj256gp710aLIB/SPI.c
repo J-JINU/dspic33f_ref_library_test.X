@@ -52,7 +52,7 @@ void setSPI1MODE(uint8_t mode){
     }
 }
 
-uint8_t sendSPI1BUF( unsigned char i ){
+uint8_t sendSPI1BUF(uint16_t i){
     SPI1BUF = i;					// write to buffer for TX
     while(!SPI1STATbits.SPIRBF);	// wait for transfer to complete
     return SPI1BUF;
@@ -82,7 +82,7 @@ static void SPI1_DefaultOverflowCallback(void){
     
 }
 
-void __attribute__((__interrupt__)) _SPI1Interrupt(void)
+void __attribute__((interrupt, no_auto_psv)) _SPI1Interrupt(void)
 {
     _SPI1IF = 0;
     if(SPI1_OverflowCallback){
@@ -99,15 +99,19 @@ void initSPI2(){        //플래시 메모리에서 사용
 	SPI2CON1bits.MODE16	=	0;
 	SPI2CON1bits.MSTEN	=	1;
     //SCL 10MHz
-	SPI2CON1bits.SPRE	=	0b100;
-	SPI2CON1bits.PPRE	=	0b10;
+	SPI2CON1bits.PPRE	=	0b10; // 4:1
+	SPI2CON1bits.SPRE	=	0b111;// 1:1
 	SPI2CON1bits.DISSDO	=	0;
 	SPI2CON1bits.DISSCK	=	0;
 	// ?Enable SPI module (SPI1STATbits.SPIEN=?)
 	SPI2STATbits.SPIEN = 1;
+    _SPI2IF = 0;
+//    DMA0REQbits.FORCE = 1;
+//    while (DMA0REQbits.FORCE == 1);
+    _SPI2IE = 1;
 }
 
-uint8_t sendSPI2BUF( unsigned char i ){
+uint8_t sendSPI2BUF(uint16_t i){
     SPI2BUF = i;					// write to buffer for TX
     while(!SPI2STATbits.SPIRBF);	// wait for transfer to complete
     return SPI2BUF;    				// read the received value
@@ -117,4 +121,9 @@ uint8_t readSPI2BUF(void){
     SPI2BUF = 0;
     while(!SPI2STATbits.SPIRBF);
     return SPI2BUF;
+}
+
+void __attribute__((interrupt, no_auto_psv)) _SPI2Interrupt(void)
+{
+    _SPI2IF = 0;
 }
