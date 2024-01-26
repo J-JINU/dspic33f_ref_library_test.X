@@ -9,7 +9,12 @@ void init_PWM1(){
     OC1R = 0;
     OC1RS = 0;
     OC1CONbits.OCM = 0b110; //PWM mode on OCx, Fault pin disabled
-    
+}
+
+void turnOnPWM1(){
+    OC1R = 0;
+    OC1RS = 0;
+    OC1CONbits.OCM = 0b110;
 }
 
 void turnOffPWM1(){
