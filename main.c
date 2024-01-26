@@ -88,25 +88,13 @@ char test_char[] = "hey!ckuf!fuck!hey!hey!";
 char test_read_char[sizeof(test_char)/sizeof(char)];
 void SaveConfig()
 {
-	uint8_t nStep;
-	uint8_t Buffer[BYTE_PER_PAGE_ALLOW];
-	uint8_t *pBuffer;
-	pBuffer = (uint8_t*)&test_char;
-//	for(nStep=0;nStep<(sizeof(test_char)) && (nStep<BYTE_PER_PAGE_ALLOW);nStep++) Buffer[nStep] = pBuffer[nStep];
-
-
 	flash_write_page(flashPage,test_char,sizeof(test_char)/sizeof(char));
 }
 
 void ReadConfig()
 {
-	uint8_t nResult;
-	nResult = flash_read_page(flashPage,test_read_char,sizeof(test_read_char)/sizeof(char));
-	if(!nResult)
+	if(!flash_read_page(flashPage,test_read_char,sizeof(test_read_char)/sizeof(char)))
 	return;
-
-//	pBuffer = (uint8_t*)&test_read_char;
-//	for(nStep=0;nStep<(  sizeof(test_read_char) );nStep++) pBuffer[nStep] = tBuffer[nStep];
 }
 
 void setup(){
