@@ -20,6 +20,7 @@
         <itemPath>dspic33fj256gp710aLIB/DMA.h</itemPath>
       </logicalFolder>
       <itemPath>main.h</itemPath>
+      <itemPath>dspic33fj256gp710aLIB/InputCapture.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -42,6 +43,7 @@
         <itemPath>dspic33fj256gp710aLIB/timer.c</itemPath>
         <itemPath>dspic33fj256gp710aLIB/UART.c</itemPath>
         <itemPath>dspic33fj256gp710aLIB/DMA.c</itemPath>
+        <itemPath>dspic33fj256gp710aLIB/InputCapture.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>

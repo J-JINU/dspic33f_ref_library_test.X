@@ -24,6 +24,7 @@ void init_system(){
     init_SPI();
     init_DMA();
     init_CAN();
+    init_IC();
 }
 
 void init_add_on(){ //기본기능 이외로 추가설치한 모듈들 활성화
