@@ -88,12 +88,12 @@ char test_char[] = "hey!ckuf!fuck!hey!hey!";
 char test_read_char[sizeof(test_char)/sizeof(char)];
 void SaveConfig()
 {
-	flash_write_page(flashPage,test_char,sizeof(test_char)/sizeof(char));
+	flash_write_page(flashPage,(uint8_t*)test_char,sizeof(test_char)/sizeof(char));
 }
 
 void ReadConfig()
 {
-	if(!flash_read_page(flashPage,test_read_char,sizeof(test_read_char)/sizeof(char)))
+	if(!flash_read_page(flashPage,(uint8_t*)test_read_char,sizeof(test_read_char)/sizeof(char)))
 	return;
 }
 

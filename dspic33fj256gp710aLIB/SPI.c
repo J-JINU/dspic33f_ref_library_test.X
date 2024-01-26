@@ -27,7 +27,7 @@ void initSPI1(uint8_t mode){
 	SPI1CON1bits.DISSCK	=	0;
     SPI1_OverflowCallbackRegister(SPI1_DefaultOverflowCallback);
     _SPI1IF = 0;
-    _SPI1IE = 1;
+    _SPI1IE = 0;
 	SPI1STATbits.SPIEN = 1;
 }
 
@@ -52,10 +52,6 @@ void setSPI1MODE(uint8_t mode){
     }
 }
 
-void sendSPI1byte(uint8_t i){
-    SPI1BUF = i;
-}
-
 uint8_t sendSPI1BUF(uint16_t i){
     SPI1BUF = i;					// write to buffer for TX
     while(!SPI1STATbits.SPIRBF);	// wait for transfer to complete
@@ -66,15 +62,6 @@ uint8_t readSPI1BUF(void){
     SPI1BUF = 0;
     while(!SPI1STATbits.SPIRBF);
     return SPI1BUF;
-}
-
-void SPI1_Write_object(uint16_t* CS, uint8_t * object_addr, uint16_t size){
-    *CS = 0;
-    uint8_t* byte;
-    for(byte = object_addr ; size-- ; byte++){
-       sendSPI1BUF(*byte);
-    }
-    *CS = 1;
 }
 
 void SPI1_OverflowCallbackRegister(void (* CallbackHandler)(void))
@@ -89,9 +76,6 @@ static void SPI1_DefaultOverflowCallback(void){
 void __attribute__((interrupt, no_auto_psv)) _SPI1Interrupt(void)
 {
     _SPI1IF = 0;
-    if(SPI1_OverflowCallback){
-        SPI1_OverflowCallback();
-    }
 }
 
 

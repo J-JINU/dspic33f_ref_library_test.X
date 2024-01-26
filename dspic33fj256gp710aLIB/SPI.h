@@ -20,12 +20,12 @@ extern "C" {
 void init_SPI();
 void initSPI1(uint8_t mode);
 void setSPI1MODE(uint8_t mode);
-void SPI1_Write_object(uint16_t* CS, uint8_t * object_addr, uint16_t size);
+uint8_t sendSPI1BUF(uint16_t i);
+uint8_t readSPI1BUF(void);
 void SPI1_OverflowCallbackRegister(void (* CallbackHandler)(void));
 void initSPI2();
-uint8_t sendSPI1BUF(uint16_t i);
 uint8_t sendSPI2BUF(uint16_t i);
-uint8_t readSPI1BUF(void);
+uint8_t readSPI2BUF(void);
 
 #ifdef	__cplusplus
 }
