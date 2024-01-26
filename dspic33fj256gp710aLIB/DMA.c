@@ -3,8 +3,12 @@
 static void (*DMA0_OverflowCallback)(void);
 static void DMA0_DefaultOverflowCallback();
 
-uint8_t TxBuffer[248] __attribute__((space(dma)));
+//uint8_t TxBuffer[248] __attribute__((space(dma)));
 
+uint8_t uart1_tx_buf[256] __attribute__((space(dma)));
+//uint8_t uart2_tx_buf[100] __attribute__((space(dma)));
+//uint16_t adc1_buf[100] __attribute__((space(dma)));
+//uint16_t adc2_buf[100] __attribute__((space(dma)));
 void init_DMA(){
     initDMA0();
 //    initDMA1();
@@ -36,7 +40,7 @@ void initDMA0(){
     //DMAXREQ: DMA Channel X IRQ Select Register
     DMA0REQbits.IRQSEL = 0b0001100; //U1TX
     
-    DMA0STA = __builtin_dmaoffset(TxBuffer);
+    DMA0STA = __builtin_dmaoffset(uart1_tx_buf);
     DMA0PAD = (volatile unsigned int) &U1TXREG;
     
     DMA0CNT = 15; // uart tx로 보낼 버퍼의 사이즈 - 1
@@ -52,7 +56,7 @@ void set_DMA0CNT(uint16_t size){
 void set_buffer(uint8_t * object_addr, uint16_t size){
     set_DMA0CNT(size);
     for(int i = 0 ; i < size; i++){
-        TxBuffer[i] = *(object_addr + i);
+        uart1_tx_buf[i] = *(object_addr + i);
     }
     start_dma();
 }

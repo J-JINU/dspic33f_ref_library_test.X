@@ -77,12 +77,6 @@ DMAXREQbits.IRQSEL: DMA Peripheral IRQ Number Select bits
 0000000 = External Interrupt 0 (INT0)
  */
     
-//uint8_t uart1_tx_buf[100];
-//uint8_t uart1_rx_buf[100];
-//uint8_t uart2_tx_buf[100];
-//uint8_t uart2_rx_buf[100];
-//uint16_t adc1_buf[100];
-//uint16_t adc2_buf[100];
     
 void init_DMA();
 void initDMA0();

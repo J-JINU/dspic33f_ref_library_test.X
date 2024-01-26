@@ -1,0 +1,71 @@
+make -f nbproject/Makefile-defaultActiveCA.mk SUBPROJECTS= .clean-conf
+make[1]: Entering directory 'C:/Users/THESYSTEM/Documents/project/datasheet/MCU/dspic/dspic33f/dspic33f_ref_library_test.X'
+rm -f  -r .ca/build/defaultActiveCA/production
+rm -f  -r .ca/dist/defaultActiveCA/production
+make[1]: Leaving directory 'C:/Users/THESYSTEM/Documents/project/datasheet/MCU/dspic/dspic33f/dspic33f_ref_library_test.X'
+[32mCLEAN SUCCESSFUL (total time: 218ms)[0m
+make -f nbproject/Makefile-defaultActiveCA.mk SUBPROJECTS= .build-conf
+make[1]: Entering directory 'C:/Users/THESYSTEM/Documents/project/datasheet/MCU/dspic/dspic33f/dspic33f_ref_library_test.X'
+make  -f nbproject/Makefile-defaultActiveCA.mk .ca/dist/defaultActiveCA/production/dspic33f_ref_library_test.X.production.hex
+make[2]: Entering directory 'C:/Users/THESYSTEM/Documents/project/datasheet/MCU/dspic/dspic33f/dspic33f_ref_library_test.X'
+"C:\Program Files\Microchip\xc16\v2.00\bin\xc16-gcc.exe"   dspic33fj256gp710aLIB/ADC.c  -o .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/ADC.o  -c -mcpu=33FJ256GP710A  -MP -MMD -MF ".ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/ADC.o.d"        -g -omf=elf -DXPRJ_defaultActiveCA=defaultActiveCA      -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/dsPIC33F-GP-MC_DFP/1.3.64/xc16"
+"C:\Program Files\Microchip\xc16\v2.00\bin\xc16-gcc.exe"   dspic33fj256gp710aLIB/AT45DB021D.c  -o .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/AT45DB021D.o  -c -mcpu=33FJ256GP710A  -MP -MMD -MF ".ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/AT45DB021D.o.d"        -g -omf=elf -DXPRJ_defaultActiveCA=defaultActiveCA      -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/dsPIC33F-GP-MC_DFP/1.3.64/xc16"
+"C:\Program Files\Microchip\xc16\v2.00\bin\xc16-gcc.exe"   dspic33fj256gp710aLIB/CAN.c  -o .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/CAN.o  -c -mcpu=33FJ256GP710A  -MP -MMD -MF ".ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/CAN.o.d"        -g -omf=elf -DXPRJ_defaultActiveCA=defaultActiveCA      -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/dsPIC33F-GP-MC_DFP/1.3.64/xc16"
+"C:\Program Files\Microchip\xc16\v2.00\bin\xc16-gcc.exe"   dspic33fj256gp710aLIB/gpio.c  -o .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/gpio.o  -c -mcpu=33FJ256GP710A  -MP -MMD -MF ".ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/gpio.o.d"        -g -omf=elf -DXPRJ_defaultActiveCA=defaultActiveCA      -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/dsPIC33F-GP-MC_DFP/1.3.64/xc16"
+"C:\Program Files\Microchip\xc16\v2.00\bin\xc16-gcc.exe"   dspic33fj256gp710aLIB/MCP3201.c  -o .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/MCP3201.o  -c -mcpu=33FJ256GP710A  -MP -MMD -MF ".ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/MCP3201.o.d"        -g -omf=elf -DXPRJ_defaultActiveCA=defaultActiveCA      -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/dsPIC33F-GP-MC_DFP/1.3.64/xc16"
+"C:\Program Files\Microchip\xc16\v2.00\bin\xc16-gcc.exe"   dspic33fj256gp710aLIB/PWM.c  -o .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/PWM.o  -c -mcpu=33FJ256GP710A  -MP -MMD -MF ".ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/PWM.o.d"        -g -omf=elf -DXPRJ_defaultActiveCA=defaultActiveCA      -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/dsPIC33F-GP-MC_DFP/1.3.64/xc16"
+"C:\Program Files\Microchip\xc16\v2.00\bin\xc16-gcc.exe"   dspic33fj256gp710aLIB/SPI.c  -o .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/SPI.o  -c -mcpu=33FJ256GP710A  -MP -MMD -MF ".ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/SPI.o.d"        -g -omf=elf -DXPRJ_defaultActiveCA=defaultActiveCA      -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/dsPIC33F-GP-MC_DFP/1.3.64/xc16"
+"C:\Program Files\Microchip\xc16\v2.00\bin\xc16-gcc.exe"   dspic33fj256gp710aLIB/system.c  -o .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/system.o  -c -mcpu=33FJ256GP710A  -MP -MMD -MF ".ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/system.o.d"        -g -omf=elf -DXPRJ_defaultActiveCA=defaultActiveCA      -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/dsPIC33F-GP-MC_DFP/1.3.64/xc16"
+"C:\Program Files\Microchip\xc16\v2.00\bin\xc16-gcc.exe"   dspic33fj256gp710aLIB/timer.c  -o .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/timer.o  -c -mcpu=33FJ256GP710A  -MP -MMD -MF ".ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/timer.o.d"        -g -omf=elf -DXPRJ_defaultActiveCA=defaultActiveCA      -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/dsPIC33F-GP-MC_DFP/1.3.64/xc16"
+"C:\Program Files\Microchip\xc16\v2.00\bin\xc16-gcc.exe"   dspic33fj256gp710aLIB/UART.c  -o .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/UART.o  -c -mcpu=33FJ256GP710A  -MP -MMD -MF ".ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/UART.o.d"        -g -omf=elf -DXPRJ_defaultActiveCA=defaultActiveCA      -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/dsPIC33F-GP-MC_DFP/1.3.64/xc16"
+"C:\Program Files\Microchip\xc16\v2.00\bin\xc16-gcc.exe"   dspic33fj256gp710aLIB/DMA.c  -o .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/DMA.o  -c -mcpu=33FJ256GP710A  -MP -MMD -MF ".ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/DMA.o.d"        -g -omf=elf -DXPRJ_defaultActiveCA=defaultActiveCA      -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/dsPIC33F-GP-MC_DFP/1.3.64/xc16"
+"C:\Program Files\Microchip\xc16\v2.00\bin\xc16-gcc.exe"   main.c  -o .ca/build/defaultActiveCA/production/main.o  -c -mcpu=33FJ256GP710A  -MP -MMD -MF ".ca/build/defaultActiveCA/production/main.o.d"        -g -omf=elf -DXPRJ_defaultActiveCA=defaultActiveCA      -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/dsPIC33F-GP-MC_DFP/1.3.64/xc16"
+[31mdspic33fj256gp710aLIB/UART.c: In function '_U1RXInterrupt':
+dspic33fj256gp710aLIB/UART.c:127:33: warning: 'a' may be used uninitialized in this function[0m
+[31mmain.c: In function 'setup':
+main.c:104:5: warning: implicit declaration of function 'init_add_on'
+main.c: At top level:
+main.c:107:6: warning: return type of 'main' is not 'int'[0m
+"C:\Program Files\Microchip\xc16\v2.00\bin\xc16-gcc.exe"   -o .ca/dist/defaultActiveCA/production/dspic33f_ref_library_test.X.production.elf  .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/ADC.o .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/AT45DB021D.o .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/CAN.o .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/gpio.o .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/MCP3201.o .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/PWM.o .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/SPI.o .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/system.o .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/timer.o .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/UART.o .ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/DMA.o .ca/build/defaultActiveCA/production/main.o      -mcpu=33FJ256GP710A        -omf=elf -DXPRJ_defaultActiveCA=defaultActiveCA      -Wl,,,--defsym=__MPLAB_BUILD=1,,--script=p33FJ256GP710A.gld,--stack=16,--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map=".ca/dist/defaultActiveCA/production/dspic33f_ref_library_test.X.production.map",--report-mem,--memorysummary,.ca/dist/defaultActiveCA/production/memoryfile.xml  -mdfp="C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/dsPIC33F-GP-MC_DFP/1.3.64/xc16" 
+[31m.ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/DMA.o(_00000000061C0C8065b35b40+0x0): In function `_DMA0Interrupt':
+dspic33fj256gp710aLIB/DMA.c:8: multiple definition of `_uart1_tx_buf'
+.ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/system.o(_0000000006230C8065b35b40+0x0):dspic33fj256gp710aLIB/system.c:17: first defined here
+.ca/build/defaultActiveCA/production/main.o(_0000000006156C8065b35b40+0x0): In function `T1_callback':
+C:\Users\THESYSTEM\Documents\project\datasheet\MCU\dspic\dspic33f\dspic33f_ref_library_test.X/main.c:64: multiple definition of `_uart1_tx_buf'
+.ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/system.o(_0000000006230C8065b35b40+0x0):dspic33fj256gp710aLIB/system.c:17: first defined here
+.ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/DMA.o: Link Error: Could not allocate section _00000000061C0C8065b35b40, size = 2048 bytes, attributes = bss dma 
+.ca/build/defaultActiveCA/production/main.o: Link Error: Could not allocate section _0000000006156C8065b35b40, size = 2048 bytes, attributes = bss dma 
+.ca/build/defaultActiveCA/production/main.o: Link Error: Could not allocate section .data, size = 36 bytes, attributes = data 
+.ca/build/defaultActiveCA/production/main.o: Link Error: Could not allocate section .bss, size = 24 bytes, attributes = bss 
+.ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/timer.o: Link Error: Could not allocate section .nbss, size = 8 bytes, attributes = bss near 
+.ca/build/defaultActiveCA/production/main.o: Link Error: Could not allocate section .nbss, size = 8 bytes, attributes = bss near 
+.ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/SPI.o: Link Error: Could not allocate section .nbss, size = 4 bytes, attributes = bss near 
+.ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/ADC.o: Link Error: Could not allocate section .nbss, size = 2 bytes, attributes = bss near 
+.ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/AT45DB021D.o: Link Error: Could not allocate section .nbss, size = 2 bytes, attributes = bss near 
+.ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/UART.o: Link Error: Could not allocate section .nbss, size = 2 bytes, attributes = bss near 
+.ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/DMA.o: Link Error: Could not allocate section .nbss, size = 2 bytes, attributes = bss near 
+.ca/build/defaultActiveCA/production/main.o: Link Error: Could not allocate section .ndata, size = 2 bytes, attributes = data near 
+.ca/build/defaultActiveCA/production/main.o: Link Error: Could not allocate section _0000000006156C8065b35b40, size = 2048 bytes, attributes = bss dma 
+.ca/build/defaultActiveCA/production/main.o: Link Error: Could not allocate section .data, size = 36 bytes, attributes = data 
+.ca/build/defaultActiveCA/production/main.o: Link Error: Could not allocate section .bss, size = 24 bytes, attributes = bss 
+.ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/timer.o: Link Error: Could not allocate section .nbss, size = 8 bytes, attributes = bss near 
+.ca/build/defaultActiveCA/production/main.o: Link Error: Could not allocate section .nbss, size = 8 bytes, attributes = bss near 
+.ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/SPI.o: Link Error: Could not allocate section .nbss, size = 4 bytes, attributes = bss near 
+.ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/ADC.o: Link Error: Could not allocate section .nbss, size = 2 bytes, attributes = bss near 
+.ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/AT45DB021D.o: Link Error: Could not allocate section .nbss, size = 2 bytes, attributes = bss near 
+.ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/UART.o: Link Error: Could not allocate section .nbss, size = 2 bytes, attributes = bss near 
+.ca/build/defaultActiveCA/production/dspic33fj256gp710aLIB/DMA.o: Link Error: Could not allocate section .nbss, size = 2 bytes, attributes = bss near 
+.ca/build/defaultActiveCA/production/main.o: Link Error: Could not allocate section .ndata, size = 2 bytes, attributes = data near 
+ Link Err[0m
+[31mor: Could not allocate data memory
+
+Info: Loading file: C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/dsPIC33F-GP-MC_DFP/1.3.64/xc16/bin/../support/dsPIC33F/gld\\p33FJ256GP710A.gld
+make[2]: *** [.ca/dist/defaultActiveCA/production/dspic33f_ref_library_test.X.production.hex] Error 255
+make[1]: *** [.build-conf] Error 2
+make: *** [.build-impl] Error 2[0m
+nbproject/Makefile-defaultActiveCA.mk:260: recipe for target '.ca/dist/defaultActiveCA/production/dspic33f_ref_library_test.X.production.hex' failed
+make[2]: Leaving directory 'C:/Users/THESYSTEM/Documents/project/datasheet/MCU/dspic/dspic33f/dspic33f_ref_library_test.X'
+nbproject/Makefile-defaultActiveCA.mk:85: recipe for target '.build-conf' failed
+make[1]: Leaving directory 'C:/Users/THESYSTEM/Documents/project/datasheet/MCU/dspic/dspic33f/dspic33f_ref_library_test.X'
+nbproject/Makefile-impl.mk:39: recipe for target '.build-impl' failed
+[31mBUILD FAILED (exit value 2, total time: 1s)[0m

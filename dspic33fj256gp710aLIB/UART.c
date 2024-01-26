@@ -1,8 +1,12 @@
 #include "UART.h"
 
 /* cmd 있을때 사용할 콜백 */
-void (*UART1_RxInterruptHandler)(uint16_t, uint8_t*);
+void (*UART1_RxCompleteInterruptHandler)(uint16_t, uint8_t*);
 static void UART1_RxDefaultInterruptHandler(uint16_t, uint8_t*);
+
+unsigned long * timecount;
+
+uint8_t uart1_rx_buf[100];
 
 void init_uart(){
     init_uart1(Baud115200);
@@ -66,6 +70,10 @@ void init_uart1(uint16_t baud){
     U1STAbits.UTXEN = 1;			//Bit10 TX pins controlled by periph
 }
 
+void set_timeoutcount(unsigned long * milliscount){
+    timecount = milliscount;
+}
+
 bool U1_TX_ready(){
     return U1STAbits.TRMT;
 }
@@ -115,16 +123,52 @@ void U1_transmit_object(uint16_t cmd, uint8_t * object_addr, uint16_t size){
 
 void UART1_SetRXInterruptHandler(void (* callbackHandler)(uint16_t, uint8_t*))
 {
-    UART1_RxInterruptHandler = callbackHandler;
+    UART1_RxCompleteInterruptHandler = callbackHandler;
 }
 
 void __attribute__((interrupt, no_auto_psv)) _U1RXInterrupt(void)
 {
+    static uint8_t chksum = 0;
+    static uint16_t recv_cmd = 0;
+    static uint16_t recv_len = 0;
+    static uint16_t total_recv_len = 0;
+    static uint16_t recv_count = 0;
+    static unsigned long timeout_count;
+    static uint8_t temp = 0;
     _U1RXIF = 0;
-    if(UART1_RxInterruptHandler){
-        uint16_t t = 0;
-        uint8_t* a;
-        UART1_RxDefaultInterruptHandler(t, a);
+    if((timecount - timeout_count) > 5){
+    /*
+     * byte간 timeout으로 5ms선정
+     * 5ms의 근거:9600bps는 1초에 960bytes 전송함
+     * 9600에서 1byte당 소요시간은 약1.042ms임
+     * 그리고 어떤 통신이던 연속으로 무한정 보낼 수 없음
+     * 요청이 있을때마다 통신이 진행될 것임.
+    */
+        recv_count = 0;
+        chksum = 0;
+    }
+    temp = U1RXREG;
+    chksum += temp;
+    if(recv_count < 2){
+        recv_cmd = (recv_cmd << 8) + temp;
+    }
+    else if(recv_count < 4){
+        recv_len = (recv_len << 8) + temp;
+        total_recv_len = recv_len + 5;
+         //total_recv_len = len + cmd.size+len.size+checksum.size
+    }
+    else if(recv_count < total_recv_len){
+        uart1_rx_buf[recv_count] = temp;
+    }
+    recv_count++;
+    timeout_count = timecount;
+    if((UART1_RxCompleteInterruptHandler != NULL) && (recv_count == total_recv_len))
+    {
+        if(chksum == 0){
+            (*UART1_RxCompleteInterruptHandler)(recv_cmd, uart1_rx_buf);
+        }
+        recv_count = 0;
+        chksum = 0;
     }
 }
 static void UART1_RxDefaultInterruptHandler(uint16_t cmd, uint8_t* buf){
