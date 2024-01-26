@@ -84,41 +84,35 @@ void init_run_callback(){
 }
 
 uint16_t flashPage= 10;
-char test_char[] = "fuck!!fuck!!fuck!!fuck!!";
+char test_char[] = "hey!hey!fuck!hey!hey!";
 char test_read_char[50];
 void SaveConfig()
 {
 	uint8_t nStep;
-	uint8_t Buffer[EEPROM_SECTOR_SIZE];
+	uint8_t Buffer[BYTE_PER_PAGE_ALLOW];
 	uint8_t *pBuffer;
 	pBuffer = (uint8_t*)&test_char;
-	for(nStep=0;nStep<(sizeof(test_char)) && (nStep<EEPROM_SECTOR_SIZE);nStep++) Buffer[nStep] = pBuffer[nStep];
+	for(nStep=0;nStep<(sizeof(test_char)) && (nStep<BYTE_PER_PAGE_ALLOW);nStep++) Buffer[nStep] = pBuffer[nStep];
 
 
-	if(flash_write_page(flashPage,Buffer));
-}
-
-void committest(){
-    if(testflag){
-        testflag = false;
-        uint8_t Buffer[EEPROM_SECTOR_SIZE];
-        flash_commit(flashPage,Buffer);
-    }
+	flash_write_page(flashPage,Buffer);
 }
 
 void ReadConfig()
 {
 	uint8_t nResult;
 	uint8_t nStep;
-	uint8_t Buffer[EEPROM_SECTOR_SIZE];
+	uint8_t tBuffer[BYTE_PER_PAGE_ALLOW];
 	uint8_t *pBuffer;
+    uint8_t sdf = 0;
+    sdf = 1;
 	
-	nResult = flash_read_page(flashPage,Buffer);
+	nResult = flash_read_page(flashPage,tBuffer);
 	if(!nResult)
 	return;
 
 	pBuffer = (uint8_t*)&test_read_char;
-	for(nStep=0;nStep<(  sizeof(test_read_char) );nStep++) pBuffer[nStep] = Buffer[nStep];
+	for(nStep=0;nStep<(  sizeof(test_read_char) );nStep++) pBuffer[nStep] = tBuffer[nStep];
 }
 
 void setup(){
@@ -130,14 +124,10 @@ void setup(){
 
 void main() {
     setup();
-    for(int i = 0; i < 24160; i++)
-    {
-     Nop();
-    }
-    
-    _LATG12 = 0;
+    SaveConfig();
+    ReadConfig();
 //    U1_transmit_buf(testmessage, sizeof(testmessage)/sizeof(char));
-    set_buffer(testmessage, sizeof(testmessage)/sizeof(char));
+//    set_buffer(testmessage, sizeof(testmessage)/sizeof(char));
     while(true){
         
     }

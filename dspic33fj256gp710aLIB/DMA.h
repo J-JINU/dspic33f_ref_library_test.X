@@ -93,7 +93,7 @@ void initDMA0();
 void set_DMA0CNT(uint16_t size);
 void DMA0_OverflowCallbackRegister(void (* CallbackHandler)(void));
 void initDMA1();
-
+void start_dma();
 
 
 #ifdef	__cplusplus

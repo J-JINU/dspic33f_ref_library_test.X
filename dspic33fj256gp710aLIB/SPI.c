@@ -52,6 +52,10 @@ void setSPI1MODE(uint8_t mode){
     }
 }
 
+void sendSPI1byte(uint8_t i){
+    SPI1BUF = i;
+}
+
 uint8_t sendSPI1BUF(uint16_t i){
     SPI1BUF = i;					// write to buffer for TX
     while(!SPI1STATbits.SPIRBF);	// wait for transfer to complete

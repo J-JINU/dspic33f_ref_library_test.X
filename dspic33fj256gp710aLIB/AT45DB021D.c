@@ -1,5 +1,8 @@
 #include "AT45DB021D.h"
 
+uint8_t* buffer_pointer;
+uint8_t RW_mode = 0; // 0 : not use, 1 : read, 2 : write
+
 static uint8_t (*flash_readwrite)(uint16_t);
 
 void init_Flash(){
@@ -23,143 +26,70 @@ bool flash_status_rdy(){
 	return ((nValue&0x80) == 0x80);
 }
 
-bool flash_read_page(uint16_t wBlock, uint8_t *pBuffer){
+bool flash_read_page(uint16_t page, uint8_t *pBuffer){
 
-    uint8_t bcc[2];
-	uint8_t nStep;
+    uint8_t chksum = 0;
 	uint16_t addr = 0;
-	uint8_t nValue;
 
     while(!flash_status_rdy()){
     }
 
-		
-	flash_readwrite( 0x00 );
-		
-		
 	FLASH_CS( 0 ); // enable DataFlash
 	flash_readwrite( MAIN_MEMORY_PAGE_READ );
 		
-	flash_readwrite( (uint8_t)(wBlock>>5) );
-	flash_readwrite( (uint8_t)(wBlock<<2) | ((uint8_t)(addr>>8)&0x03) );
+	flash_readwrite( (uint8_t)(page>>5) );
+	flash_readwrite( (uint8_t)(page<<2) | ((uint8_t)(addr>>8)&0x03) );
 	flash_readwrite( (uint8_t)addr );
 		
 	flash_readwrite( 0x00 );
 	flash_readwrite( 0x00 );
 	flash_readwrite( 0x00 );
 	flash_readwrite( 0x00 );
-		
-	bcc[0] = 0;
-	bcc[1] = 0;
-	for( nStep=0;nStep<EEPROM_SECTOR_DATA;nStep++ )
+
+	for(uint16_t nStep=0;nStep<BYTE_PER_PAGE_CHKSUM;nStep++ )
 	{
-		nValue = flash_readwrite( 0xff );
-		if((nStep&0x01) == 0) bcc[0] ^= nValue;
-		else bcc[1] ^= nValue;
-		pBuffer[nStep] = nValue;
+		pBuffer[nStep] = flash_readwrite( 0xff );
+		chksum += pBuffer[nStep];
 	}
 		
-	nValue = flash_readwrite( 0xff );
-	bcc[0] ^= nValue;
-	nValue = flash_readwrite( 0xff );
-	bcc[1] ^= nValue;
-		
 	FLASH_CS( 1 ); // disable DataFlash
-		//return TRUE;
 	
 	// NullÀÏ°æ¿ì ÇØ´çµÊ.
-	if((bcc[0] == 0) && (bcc[1] == 0)) return true;
-	return false;
+	if(!chksum) return false;
+	return true;
 }
 
 
-bool flash_write_page( uint16_t wBlock, uint8_t *pBuffer){
+void flash_write_page( uint16_t page, uint8_t *pBuffer){
     
-	uint8_t bcc[2];
-	uint8_t nStep;
+	uint8_t chksum = 0;
 	uint16_t addr = 0;
 	
-	while(!flash_status_rdy()){
-    }
-	
-	flash_readwrite( 0x00 );
-	
-	
-//	//-----------------------------------------------------------------------------------
-//	FLASH_CS( 0 ); // enable DataFlash
-//	flash_readwrite( MAIN_MEMORY_PAGE_TO_BUFFER_TRANSFER );
-//	flash_readwrite( (uint8_t)(wBlock>>5) );
-//	flash_readwrite( (uint8_t)(wBlock<<2) );
-//	flash_readwrite( 0x00 );
-//	FLASH_CS( 1 );
-//	//-----------------------------------------------------------------------------------
-	
-	flash_readwrite( 0x00 );
-	
-	while(!flash_status_rdy()){
-    }
-	
+	while(!flash_status_rdy());
     
-	flash_readwrite( 0x00 );
-//	set_buffer(pBuffer);
 	//-----------------------------------------------------------------------------------
 	FLASH_CS( 0 ); // enable DataFlash
 	flash_readwrite( BUFFER_WRITE );
 	flash_readwrite( 0x00 );
 	flash_readwrite( (uint16_t)(addr>>8)&0x03 );
 	flash_readwrite( (uint16_t)addr );
-//	start_dma();
-	bcc[0] = 0; bcc[1] = 0;
-	for( nStep=0;nStep<EEPROM_SECTOR_DATA;nStep++ )
+	for(uint16_t nStep=0;nStep<BYTE_PER_PAGE_CHKSUM;nStep++ )
 	{
-		if((nStep&0x01) == 0) bcc[0] ^= pBuffer[nStep];
-		else bcc[1] ^= pBuffer[nStep];
-		
-		flash_readwrite( pBuffer[nStep] );
+		chksum += pBuffer[nStep];
+		flash_readwrite(pBuffer[nStep]);
 	}
- 	
-// 	for( nStep=0;nStep<EEPROM_SECTOR_DATA;nStep++ )
-// 		eeprom_spi_transfer( pBuffer[nStep] );
-		
-	flash_readwrite( (uint8_t)bcc[0] );
-	flash_readwrite( (uint8_t)bcc[1] );
+	flash_readwrite(chksum);
 	
 	FLASH_CS( 1 ); // disable DataFlash
-//    return true;
 	//-----------------------------------------------------------------------------------
 	
-	flash_readwrite( 0x00 );
-	
-    while(!flash_status_rdy()){
-    }
-	flash_readwrite( 0x00 );
+    while(!flash_status_rdy());
 	
 	//-----------------------------------------------------------------------------------
 	FLASH_CS( 0 ); // enable DataFlash
 	flash_readwrite( BUFFER_TO_MAIN_MEMORY_PAGE_PROGRAM_WITH_BUILTIN_ERASE );
-	flash_readwrite( (uint8_t)(wBlock>>5) );
-	flash_readwrite( (uint8_t)(wBlock<<2) );
-	flash_readwrite( 0x00 );
-	FLASH_CS( 1 ); // disable DataFlash
-	//-----------------------------------------------------------------------------------
-	return true;
-}
-
-
-void flash_commit(uint16_t wBlock, uint8_t *pBuffer){
-    //-----------------------------------------------------------------------------------
-	
-	flash_readwrite( 0x00 );
-	
-    while(!flash_status_rdy()){
-    }
-	flash_readwrite( 0x00 );
-	
-	//-----------------------------------------------------------------------------------
-	FLASH_CS( 0 ); // enable DataFlash
-	flash_readwrite( BUFFER_TO_MAIN_MEMORY_PAGE_PROGRAM_WITH_BUILTIN_ERASE );
-	flash_readwrite( (uint8_t)(wBlock>>5) );
-	flash_readwrite( (uint8_t)(wBlock<<2) );
+	flash_readwrite( (uint8_t)(page>>5) );
+	flash_readwrite( (uint8_t)(page<<2) );
 	flash_readwrite( 0x00 );
 	FLASH_CS( 1 ); // disable DataFlash
 	//-----------------------------------------------------------------------------------

@@ -18,9 +18,10 @@
 //페이지당 264바이트이다. 하지만 페이지의 가장 앞 8바이트는 내가 사용하지 않는다.
 #define POWEROF2 8
 #define BYTE_PER_PAGE_ALLOW 256
+#define BYTE_PER_PAGE_CHKSUM (BYTE_PER_PAGE_ALLOW - 1)// 1byte checksum
 #define BYTE_PER_PAGE   264
-#define EEPROM_SECTOR_SIZE			250
-#define EEPROM_SECTOR_DATA			248	// 2byte bcc
+//#define EEPROM_SECTOR_SIZE			250
+//#define EEPROM_SECTOR_DATA			(EEPROM_SECTOR_SIZE - 1)	// 1byte checksum
 #define NUM_OF_PAGE     1024
 
 //Read Commands
@@ -118,9 +119,7 @@ void init_Flash();
 void flash_readwriteRegister(uint8_t (* CallbackHandler)(uint16_t));
 bool flash_status_rdy();
 bool flash_read_page(uint16_t wBlock, uint8_t *pBuffer);
-bool flash_write_page(uint16_t wBlock, uint8_t *pBuffer);
-void flash_commit(uint16_t wBlock, uint8_t *pBuffer);
-extern volatile uint8_t m_flash_buffer[EEPROM_SECTOR_SIZE];
+void flash_write_page(uint16_t wBlock, uint8_t *pBuffer);
 
 
 #endif	/* AT45DB021D_H */
