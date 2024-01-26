@@ -114,12 +114,11 @@ extern "C" {
 #define HiByte(X)   (unsigned char)((X>>8) & 0x00ff)
 #define LoByte(X)   (unsigned char)(X & 0x00ff)
 
-
 void init_Flash();
 void flash_readwriteRegister(uint8_t (* CallbackHandler)(uint16_t));
 bool flash_status_rdy();
-bool flash_read_page(uint16_t wBlock, uint8_t *pBuffer);
-void flash_write_page(uint16_t wBlock, uint8_t *pBuffer);
+bool flash_read_page(uint16_t page, uint8_t *object, uint16_t size);
+void flash_write_page(uint16_t page, uint8_t *object, uint16_t size);
 
 
 #endif	/* AT45DB021D_H */

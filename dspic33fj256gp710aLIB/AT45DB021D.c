@@ -1,8 +1,5 @@
 #include "AT45DB021D.h"
 
-uint8_t* buffer_pointer;
-uint8_t RW_mode = 0; // 0 : not use, 1 : read, 2 : write
-
 static uint8_t (*flash_readwrite)(uint16_t);
 
 void init_Flash(){
@@ -26,11 +23,10 @@ bool flash_status_rdy(){
 	return ((nValue&0x80) == 0x80);
 }
 
-bool flash_read_page(uint16_t page, uint8_t *pBuffer){
+bool flash_read_page(uint16_t page, uint8_t *object, uint16_t size){
 
     uint8_t chksum = 0;
 	uint16_t addr = 0;
-
     while(!flash_status_rdy()){
     }
 
@@ -46,25 +42,24 @@ bool flash_read_page(uint16_t page, uint8_t *pBuffer){
 	flash_readwrite( 0x00 );
 	flash_readwrite( 0x00 );
 
-	for(uint16_t nStep=0;nStep<BYTE_PER_PAGE_CHKSUM;nStep++ )
+	for(uint16_t i = 0 ; i < size ; i++)
 	{
-		pBuffer[nStep] = flash_readwrite( 0xff );
-		chksum += pBuffer[nStep];
+		object[i] = flash_readwrite( 0xff );
+		chksum += object[i];
 	}
-		
+    chksum += flash_readwrite(0xff);
 	FLASH_CS( 1 ); // disable DataFlash
 	
-	// NullÀÏ°æ¿ì ÇØ´çµÊ.
 	if(!chksum) return false;
 	return true;
 }
 
 
-void flash_write_page( uint16_t page, uint8_t *pBuffer){
+void flash_write_page(uint16_t page, uint8_t *object, uint16_t size){
     
 	uint8_t chksum = 0;
 	uint16_t addr = 0;
-	
+
 	while(!flash_status_rdy());
     
 	//-----------------------------------------------------------------------------------
@@ -73,10 +68,10 @@ void flash_write_page( uint16_t page, uint8_t *pBuffer){
 	flash_readwrite( 0x00 );
 	flash_readwrite( (uint16_t)(addr>>8)&0x03 );
 	flash_readwrite( (uint16_t)addr );
-	for(uint16_t nStep=0;nStep<BYTE_PER_PAGE_CHKSUM;nStep++ )
+	for(uint16_t i = 0 ; i < size ; i++)
 	{
-		chksum += pBuffer[nStep];
-		flash_readwrite(pBuffer[nStep]);
+		chksum += *(object + i);
+		flash_readwrite(*(object + i));
 	}
 	flash_readwrite(chksum);
 	

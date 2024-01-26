@@ -77,24 +77,24 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x23a           0x357  (855)
-.text                        0x43a               0xb84          0x1146  (4422)
-.dinit                       0xfbe                0x5e            0x8d  (141)
-.text                       0x101c                0x70            0xa8  (168)
+.text                        0x43a               0xbb4          0x118e  (4494)
+.dinit                       0xfee                0x5e            0x8d  (141)
+.text                       0x104c                0x70            0xa8  (168)
 
-                 Total "program" memory used (bytes):         0x15d2  (5586) 2%
+                 Total "program" memory used (bytes):         0x161a  (5658) 2%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x7800]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-.nbss                        0x800                   0            0x20  (32)
-.ndata                       0x820                   0             0x2  (2)
-.bss                         0x822                   0            0x32  (50)
-.data                        0x854                   0            0x24  (36)
-_0000000005A17D2065b344f7    0x7f08                   0            0xf8  (248)
+.nbss                        0x800                   0            0x1c  (28)
+.ndata                       0x81c                   0             0x2  (2)
+.bss                         0x81e                   0            0x32  (50)
+.data                        0x850                   0            0x24  (36)
+_0000000006206D2065b35193    0x7f08                   0            0xf8  (248)
 
-                 Total "data" memory used (bytes):          0x170  (368) 1%
+                 Total "data" memory used (bytes):          0x16c  (364) 1%
 
 
 Dynamic Memory Usage
@@ -102,9 +102,9 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                        0x878                              0x7690  (30352)
+stack                        0x874                              0x7694  (30356)
 
-                 Maximum dynamic memory (bytes):         0x7690  (30352)
+                 Maximum dynamic memory (bytes):         0x7694  (30356)
 
 Info: Project is using a large data memory model when small data memory model is sufficient.
 
@@ -114,30 +114,26 @@ External Symbols in Data Memory (by address):
                     0x0808                  _millis
                     0x080c                  _testflag
                     0x080e                  _c
-                    0x0810                  _buffer_pointer
-                    0x0812                  _RW_mode
-                    0x0816                  _cs1
-                    0x081c                  _UART1_RxInterruptHandler
-                    0x0820                  _flashPage
-                    0x0822                  _test_read_char
-                    0x0854                  _testmessage
-                    0x0861                  _test_char
+                    0x0810                  _cs1
+                    0x0818                  _UART1_RxInterruptHandler
+                    0x081c                  _flashPage
+                    0x081e                  _test_read_char
+                    0x0850                  _testmessage
+                    0x085d                  _test_char
                     0x7f08                  _TxBuffer
 
 External Symbols in Data Memory (by name):
 
-                    0x0812                  _RW_mode
                     0x7f08                  _TxBuffer
-                    0x081c                  _UART1_RxInterruptHandler
-                    0x0810                  _buffer_pointer
+                    0x0818                  _UART1_RxInterruptHandler
                     0x080e                  _c
-                    0x0816                  _cs1
-                    0x0820                  _flashPage
+                    0x0810                  _cs1
+                    0x081c                  _flashPage
                     0x0808                  _millis
-                    0x0861                  _test_char
-                    0x0822                  _test_read_char
+                    0x085d                  _test_char
+                    0x081e                  _test_read_char
                     0x080c                  _testflag
-                    0x0854                  _testmessage
+                    0x0850                  _testmessage
 
 External Symbols in Program Memory (by address):
 
@@ -168,80 +164,80 @@ External Symbols in Program Memory (by address):
                   0x000668                  _flash_readwriteRegister
                   0x000674                  _flash_status_rdy
                   0x000694                  _flash_read_page
-                  0x00075a                  _flash_write_page
-                  0x000818                  _init_SPI
-                  0x000824                  _initSPI1
-                  0x000856                  _setSPI1MODE
-                  0x000890                  _sendSPI1byte
-                  0x00089c                  _sendSPI1BUF
-                  0x0008b6                  _readSPI1BUF
-                  0x0008cc                  _SPI1_Write_object
-                  0x00091a                  _SPI1_OverflowCallbackRegister
-                  0x000926                  build/default/production/dspic33fj256gp710aLIB/SPI.o:_SPI1_DefaultOverflowCallback
-                  0x00092c                  _initSPI2
-                  0x000954                  _sendSPI2BUF
-                  0x00096e                  _readSPI2BUF
-                  0x000984                  _init_ADC
-                  0x00098c                  _initADC1
-                  0x000a04                  _ADC1_OverflowCallbackRegister
-                  0x000a10                  build/default/production/dspic33fj256gp710aLIB/ADC.o:_ADC1_DefaultOverflowCallback
-                  0x000a16                  _initADC2
-                  0x000ab6                  _T1_callback
-                  0x000afc                  _dma_testcallback
-                  0x000b20                  _init_INT_callback
-                  0x000b2e                  _init_run_callback
-                  0x000b38                  _SaveConfig
-                  0x000b6e                  _ReadConfig
-                  0x000bc2                  _setup
-                  0x000bd0                  _main
-                  0x000bda                  _init_CAN
-                  0x000be2                  _initCAN1
-                  0x000cd8                  _init_GPIO
-                  0x000db2                  _extIntPin
-                  0x000dbe                  _init_timer
-                  0x000dc8                  _init_T1
-                  0x000df4                  _Timer1_OverflowCallbackRegister
-                  0x000e00                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer1_DefaultOverflowCallback
-                  0x000e06                  _init_T2
-                  0x000e24                  _Timer2_OverflowCallbackRegister
-                  0x000e30                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer2_DefaultOverflowCallback
-                  0x000e36                  _init_T3
-                  0x000e58                  _Timer3_OverflowCallbackRegister
-                  0x000e64                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer3_DefaultOverflowCallback
-                  0x000e6a                  _init_T8
-                  0x000e8a                  _Timer8_OverflowCallbackRegister
-                  0x000e96                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer8_DefaultOverflowCallback
-                  0x000e9c                  _init_DMA
-                  0x000ea4                  _initDMA0
-                  0x000ee2                  _set_DMA0CNT
-                  0x000eee                  _set_buffer
-                  0x000f26                  _start_dma
-                  0x000f30                  _DMA0_OverflowCallbackRegister
-                  0x000f3c                  build/default/production/dspic33fj256gp710aLIB/DMA.o:_DMA0_DefaultOverflowCallback
-                  0x000f42                  _initDMA1
-                  0x000f48                  _init_system
-                  0x000f5e                  _init_add_on
-                  0x000f66                  _setAbsoluteEnv
-                  0x00101c                  _init_PWM1
-                  0x001034                  _turnOffPWM1
-                  0x001042                  _set_pwm1_duty
-                  0x00104e                  _turnOnPWM2
-                  0x001066                  _turnOffPWM2
-                  0x001074                  _init3201
+                  0x000760                  _flash_write_page
+                  0x000824                  _init_SPI
+                  0x000830                  _initSPI1
+                  0x000862                  _setSPI1MODE
+                  0x00089c                  _sendSPI1byte
+                  0x0008a8                  _sendSPI1BUF
+                  0x0008c2                  _readSPI1BUF
+                  0x0008d8                  _SPI1_Write_object
+                  0x000926                  _SPI1_OverflowCallbackRegister
+                  0x000932                  build/default/production/dspic33fj256gp710aLIB/SPI.o:_SPI1_DefaultOverflowCallback
+                  0x000938                  _initSPI2
+                  0x000960                  _sendSPI2BUF
+                  0x00097a                  _readSPI2BUF
+                  0x000990                  _T1_callback
+                  0x0009d6                  _dma_testcallback
+                  0x0009fa                  _init_INT_callback
+                  0x000a08                  _init_run_callback
+                  0x000a12                  _SaveConfig
+                  0x000a4a                  _ReadConfig
+                  0x000aa0                  _setup
+                  0x000aae                  _main
+                  0x000ad8                  _init_ADC
+                  0x000ae0                  _initADC1
+                  0x000b58                  _ADC1_OverflowCallbackRegister
+                  0x000b64                  build/default/production/dspic33fj256gp710aLIB/ADC.o:_ADC1_DefaultOverflowCallback
+                  0x000b6a                  _initADC2
+                  0x000c0a                  _init_CAN
+                  0x000c12                  _initCAN1
+                  0x000d08                  _init_GPIO
+                  0x000de2                  _extIntPin
+                  0x000dee                  _init_timer
+                  0x000df8                  _init_T1
+                  0x000e24                  _Timer1_OverflowCallbackRegister
+                  0x000e30                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer1_DefaultOverflowCallback
+                  0x000e36                  _init_T2
+                  0x000e54                  _Timer2_OverflowCallbackRegister
+                  0x000e60                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer2_DefaultOverflowCallback
+                  0x000e66                  _init_T3
+                  0x000e88                  _Timer3_OverflowCallbackRegister
+                  0x000e94                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer3_DefaultOverflowCallback
+                  0x000e9a                  _init_T8
+                  0x000eba                  _Timer8_OverflowCallbackRegister
+                  0x000ec6                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer8_DefaultOverflowCallback
+                  0x000ecc                  _init_DMA
+                  0x000ed4                  _initDMA0
+                  0x000f12                  _set_DMA0CNT
+                  0x000f1e                  _set_buffer
+                  0x000f56                  _start_dma
+                  0x000f60                  _DMA0_OverflowCallbackRegister
+                  0x000f6c                  build/default/production/dspic33fj256gp710aLIB/DMA.o:_DMA0_DefaultOverflowCallback
+                  0x000f72                  _initDMA1
+                  0x000f78                  _init_system
+                  0x000f8e                  _init_add_on
+                  0x000f96                  _setAbsoluteEnv
+                  0x00104c                  _init_PWM1
+                  0x001064                  _turnOffPWM1
+                  0x001072                  _set_pwm1_duty
+                  0x00107e                  _turnOnPWM2
+                  0x001096                  _turnOffPWM2
+                  0x0010a4                  _init3201
 
 External Symbols in Program Memory (by name):
 
-                  0x000a04                  _ADC1_OverflowCallbackRegister
-                  0x000f30                  _DMA0_OverflowCallbackRegister
-                  0x000b6e                  _ReadConfig
-                  0x00091a                  _SPI1_OverflowCallbackRegister
-                  0x0008cc                  _SPI1_Write_object
-                  0x000b38                  _SaveConfig
-                  0x000ab6                  _T1_callback
-                  0x000df4                  _Timer1_OverflowCallbackRegister
-                  0x000e24                  _Timer2_OverflowCallbackRegister
-                  0x000e58                  _Timer3_OverflowCallbackRegister
-                  0x000e8a                  _Timer8_OverflowCallbackRegister
+                  0x000b58                  _ADC1_OverflowCallbackRegister
+                  0x000f60                  _DMA0_OverflowCallbackRegister
+                  0x000a4a                  _ReadConfig
+                  0x000926                  _SPI1_OverflowCallbackRegister
+                  0x0008d8                  _SPI1_Write_object
+                  0x000a12                  _SaveConfig
+                  0x000990                  _T1_callback
+                  0x000e24                  _Timer1_OverflowCallbackRegister
+                  0x000e54                  _Timer2_OverflowCallbackRegister
+                  0x000e88                  _Timer3_OverflowCallbackRegister
+                  0x000eba                  _Timer8_OverflowCallbackRegister
                   0x0004be                  _U1_TX_ready
                   0x0004ec                  _U1_transmit_buf
                   0x0004d6                  _U1_transmit_byte
@@ -261,63 +257,63 @@ External Symbols in Program Memory (by name):
                   0x000252                  __data_init_standard
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x000afc                  _dma_testcallback
-                  0x000db2                  _extIntPin
+                  0x0009d6                  _dma_testcallback
+                  0x000de2                  _extIntPin
                   0x000694                  _flash_read_page
                   0x000668                  _flash_readwriteRegister
                   0x000674                  _flash_status_rdy
-                  0x00075a                  _flash_write_page
-                  0x001074                  _init3201
-                  0x00098c                  _initADC1
-                  0x000a16                  _initADC2
-                  0x000be2                  _initCAN1
-                  0x000ea4                  _initDMA0
-                  0x000f42                  _initDMA1
-                  0x000824                  _initSPI1
-                  0x00092c                  _initSPI2
-                  0x000984                  _init_ADC
-                  0x000bda                  _init_CAN
-                  0x000e9c                  _init_DMA
+                  0x000760                  _flash_write_page
+                  0x0010a4                  _init3201
+                  0x000ae0                  _initADC1
+                  0x000b6a                  _initADC2
+                  0x000c12                  _initCAN1
+                  0x000ed4                  _initDMA0
+                  0x000f72                  _initDMA1
+                  0x000830                  _initSPI1
+                  0x000938                  _initSPI2
+                  0x000ad8                  _init_ADC
+                  0x000c0a                  _init_CAN
+                  0x000ecc                  _init_DMA
                   0x000656                  _init_Flash
-                  0x000cd8                  _init_GPIO
-                  0x000b20                  _init_INT_callback
-                  0x00101c                  _init_PWM1
-                  0x000818                  _init_SPI
-                  0x000dc8                  _init_T1
-                  0x000e06                  _init_T2
-                  0x000e36                  _init_T3
-                  0x000e6a                  _init_T8
-                  0x000f5e                  _init_add_on
-                  0x000b2e                  _init_run_callback
-                  0x000f48                  _init_system
-                  0x000dbe                  _init_timer
+                  0x000d08                  _init_GPIO
+                  0x0009fa                  _init_INT_callback
+                  0x00104c                  _init_PWM1
+                  0x000824                  _init_SPI
+                  0x000df8                  _init_T1
+                  0x000e36                  _init_T2
+                  0x000e66                  _init_T3
+                  0x000e9a                  _init_T8
+                  0x000f8e                  _init_add_on
+                  0x000a08                  _init_run_callback
+                  0x000f78                  _init_system
+                  0x000dee                  _init_timer
                   0x00043a                  _init_uart
                   0x000448                  _init_uart1
                   0x000650                  _init_uart2
-                  0x000bd0                  _main
-                  0x0008b6                  _readSPI1BUF
-                  0x00096e                  _readSPI2BUF
-                  0x00089c                  _sendSPI1BUF
-                  0x000890                  _sendSPI1byte
-                  0x000954                  _sendSPI2BUF
-                  0x000f66                  _setAbsoluteEnv
-                  0x000856                  _setSPI1MODE
-                  0x000ee2                  _set_DMA0CNT
-                  0x000eee                  _set_buffer
-                  0x001042                  _set_pwm1_duty
-                  0x000bc2                  _setup
-                  0x000f26                  _start_dma
-                  0x001034                  _turnOffPWM1
-                  0x001066                  _turnOffPWM2
-                  0x00104e                  _turnOnPWM2
-                  0x000a10                  build/default/production/dspic33fj256gp710aLIB/ADC.o:_ADC1_DefaultOverflowCallback
-                  0x000f3c                  build/default/production/dspic33fj256gp710aLIB/DMA.o:_DMA0_DefaultOverflowCallback
-                  0x000926                  build/default/production/dspic33fj256gp710aLIB/SPI.o:_SPI1_DefaultOverflowCallback
+                  0x000aae                  _main
+                  0x0008c2                  _readSPI1BUF
+                  0x00097a                  _readSPI2BUF
+                  0x0008a8                  _sendSPI1BUF
+                  0x00089c                  _sendSPI1byte
+                  0x000960                  _sendSPI2BUF
+                  0x000f96                  _setAbsoluteEnv
+                  0x000862                  _setSPI1MODE
+                  0x000f12                  _set_DMA0CNT
+                  0x000f1e                  _set_buffer
+                  0x001072                  _set_pwm1_duty
+                  0x000aa0                  _setup
+                  0x000f56                  _start_dma
+                  0x001064                  _turnOffPWM1
+                  0x001096                  _turnOffPWM2
+                  0x00107e                  _turnOnPWM2
+                  0x000b64                  build/default/production/dspic33fj256gp710aLIB/ADC.o:_ADC1_DefaultOverflowCallback
+                  0x000f6c                  build/default/production/dspic33fj256gp710aLIB/DMA.o:_DMA0_DefaultOverflowCallback
+                  0x000932                  build/default/production/dspic33fj256gp710aLIB/SPI.o:_SPI1_DefaultOverflowCallback
                   0x000644                  build/default/production/dspic33fj256gp710aLIB/UART.o:_UART1_RxDefaultInterruptHandler
-                  0x000e00                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer1_DefaultOverflowCallback
-                  0x000e30                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer2_DefaultOverflowCallback
-                  0x000e64                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer3_DefaultOverflowCallback
-                  0x000e96                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer8_DefaultOverflowCallback
+                  0x000e30                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer1_DefaultOverflowCallback
+                  0x000e60                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer2_DefaultOverflowCallback
+                  0x000e94                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer3_DefaultOverflowCallback
+                  0x000ec6                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer8_DefaultOverflowCallback
 
 Memory Configuration
 
@@ -467,38 +463,38 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x94d6
+.debug_info       0x000000       0x94fb
  *(.debug_info)
  .debug_info      0x000000       0x1b09 build/default/production/dspic33fj256gp710aLIB/ADC.o
- .debug_info      0x001b09        0x4f1 build/default/production/dspic33fj256gp710aLIB/AT45DB021D.o
- .debug_info      0x001ffa        0xfac build/default/production/dspic33fj256gp710aLIB/CAN.o
- .debug_info      0x002fa6       0x1429 build/default/production/dspic33fj256gp710aLIB/gpio.o
- .debug_info      0x0043cf        0x6f5 build/default/production/dspic33fj256gp710aLIB/MCP3201.o
- .debug_info      0x004ac4        0x4f4 build/default/production/dspic33fj256gp710aLIB/PWM.o
- .debug_info      0x004fb8        0xf42 build/default/production/dspic33fj256gp710aLIB/SPI.o
- .debug_info      0x005efa        0x6d6 build/default/production/dspic33fj256gp710aLIB/system.o
- .debug_info      0x0065d0       0x117f build/default/production/dspic33fj256gp710aLIB/timer.o
- .debug_info      0x00774f        0xe5f build/default/production/dspic33fj256gp710aLIB/UART.o
- .debug_info      0x0085ae        0x996 build/default/production/dspic33fj256gp710aLIB/DMA.o
- .debug_info      0x008f44        0x592 build/default/production/main.o
+ .debug_info      0x001b09        0x4d2 build/default/production/dspic33fj256gp710aLIB/AT45DB021D.o
+ .debug_info      0x001fdb        0xfac build/default/production/dspic33fj256gp710aLIB/CAN.o
+ .debug_info      0x002f87       0x1429 build/default/production/dspic33fj256gp710aLIB/gpio.o
+ .debug_info      0x0043b0        0x6f5 build/default/production/dspic33fj256gp710aLIB/MCP3201.o
+ .debug_info      0x004aa5        0x4f4 build/default/production/dspic33fj256gp710aLIB/PWM.o
+ .debug_info      0x004f99        0xf42 build/default/production/dspic33fj256gp710aLIB/SPI.o
+ .debug_info      0x005edb        0x6d6 build/default/production/dspic33fj256gp710aLIB/system.o
+ .debug_info      0x0065b1       0x117f build/default/production/dspic33fj256gp710aLIB/timer.o
+ .debug_info      0x007730        0xe5f build/default/production/dspic33fj256gp710aLIB/UART.o
+ .debug_info      0x00858f        0x996 build/default/production/dspic33fj256gp710aLIB/DMA.o
+ .debug_info      0x008f25        0x5d6 build/default/production/main.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0xcde
+.debug_abbrev     0x000000        0xcd6
  *(.debug_abbrev)
  .debug_abbrev    0x000000        0x130 build/default/production/dspic33fj256gp710aLIB/ADC.o
- .debug_abbrev    0x000130        0x122 build/default/production/dspic33fj256gp710aLIB/AT45DB021D.o
- .debug_abbrev    0x000252         0xb2 build/default/production/dspic33fj256gp710aLIB/CAN.o
- .debug_abbrev    0x000304         0xc3 build/default/production/dspic33fj256gp710aLIB/gpio.o
- .debug_abbrev    0x0003c7         0xc3 build/default/production/dspic33fj256gp710aLIB/MCP3201.o
- .debug_abbrev    0x00048a         0xe9 build/default/production/dspic33fj256gp710aLIB/PWM.o
- .debug_abbrev    0x000573        0x171 build/default/production/dspic33fj256gp710aLIB/SPI.o
- .debug_abbrev    0x0006e4         0xc3 build/default/production/dspic33fj256gp710aLIB/system.o
- .debug_abbrev    0x0007a7        0x145 build/default/production/dspic33fj256gp710aLIB/timer.o
- .debug_abbrev    0x0008ec        0x166 build/default/production/dspic33fj256gp710aLIB/UART.o
- .debug_abbrev    0x000a52        0x16b build/default/production/dspic33fj256gp710aLIB/DMA.o
- .debug_abbrev    0x000bbd        0x121 build/default/production/main.o
+ .debug_abbrev    0x000130        0x111 build/default/production/dspic33fj256gp710aLIB/AT45DB021D.o
+ .debug_abbrev    0x000241         0xb2 build/default/production/dspic33fj256gp710aLIB/CAN.o
+ .debug_abbrev    0x0002f3         0xc3 build/default/production/dspic33fj256gp710aLIB/gpio.o
+ .debug_abbrev    0x0003b6         0xc3 build/default/production/dspic33fj256gp710aLIB/MCP3201.o
+ .debug_abbrev    0x000479         0xe9 build/default/production/dspic33fj256gp710aLIB/PWM.o
+ .debug_abbrev    0x000562        0x171 build/default/production/dspic33fj256gp710aLIB/SPI.o
+ .debug_abbrev    0x0006d3         0xc3 build/default/production/dspic33fj256gp710aLIB/system.o
+ .debug_abbrev    0x000796        0x145 build/default/production/dspic33fj256gp710aLIB/timer.o
+ .debug_abbrev    0x0008db        0x166 build/default/production/dspic33fj256gp710aLIB/UART.o
+ .debug_abbrev    0x000a41        0x16b build/default/production/dspic33fj256gp710aLIB/DMA.o
+ .debug_abbrev    0x000bac        0x12a build/default/production/main.o
 
-.debug_line       0x000000       0x1065
+.debug_line       0x000000       0x1069
  *(.debug_line)
  .debug_line      0x000000        0x183 build/default/production/dspic33fj256gp710aLIB/ADC.o
  .debug_line      0x000183        0x15f build/default/production/dspic33fj256gp710aLIB/AT45DB021D.o
@@ -511,7 +507,7 @@ __FUID3
  .debug_line      0x000ac0        0x18c build/default/production/dspic33fj256gp710aLIB/timer.o
  .debug_line      0x000c4c        0x18c build/default/production/dspic33fj256gp710aLIB/UART.o
  .debug_line      0x000dd8        0x158 build/default/production/dspic33fj256gp710aLIB/DMA.o
- .debug_line      0x000f30        0x135 build/default/production/main.o
+ .debug_line      0x000f30        0x139 build/default/production/main.o
 
 .debug_frame      0x000000        0xa6c
  *(.debug_frame)
@@ -528,7 +524,7 @@ __FUID3
  .debug_frame     0x000866        0x122 build/default/production/dspic33fj256gp710aLIB/DMA.o
  .debug_frame     0x000988         0xe4 build/default/production/main.o
 
-.debug_str        0x000000        0x3bf
+.debug_str        0x000000        0x3cb
  *(.debug_str)
  .debug_str       0x000000         0xd0 build/default/production/dspic33fj256gp710aLIB/ADC.o
  .debug_str       0x0000d0          0x9 build/default/production/dspic33fj256gp710aLIB/AT45DB021D.o
@@ -541,7 +537,7 @@ __FUID3
  .debug_str       0x000280         0x85 build/default/production/dspic33fj256gp710aLIB/timer.o
  .debug_str       0x000305         0x52 build/default/production/dspic33fj256gp710aLIB/UART.o
  .debug_str       0x000357         0x33 build/default/production/dspic33fj256gp710aLIB/DMA.o
- .debug_str       0x00038a         0x35 build/default/production/main.o
+ .debug_str       0x00038a         0x41 build/default/production/main.o
 
 .debug_loc
  *(.debug_loc)
@@ -550,32 +546,32 @@ __FUID3
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x6c3
+                  0x000000        0x6a4
  *(.debug_pubnames)
  .debug_pubnames
                   0x000000         0x6e build/default/production/dspic33fj256gp710aLIB/ADC.o
  .debug_pubnames
-                  0x00006e         0x9a build/default/production/dspic33fj256gp710aLIB/AT45DB021D.o
+                  0x00006e         0x7b build/default/production/dspic33fj256gp710aLIB/AT45DB021D.o
  .debug_pubnames
-                  0x000108         0x2c build/default/production/dspic33fj256gp710aLIB/CAN.o
+                  0x0000e9         0x2c build/default/production/dspic33fj256gp710aLIB/CAN.o
  .debug_pubnames
-                  0x000134         0x2e build/default/production/dspic33fj256gp710aLIB/gpio.o
+                  0x000115         0x2e build/default/production/dspic33fj256gp710aLIB/gpio.o
  .debug_pubnames
-                  0x000162         0x1f build/default/production/dspic33fj256gp710aLIB/MCP3201.o
+                  0x000143         0x1f build/default/production/dspic33fj256gp710aLIB/MCP3201.o
  .debug_pubnames
-                  0x000181         0x61 build/default/production/dspic33fj256gp710aLIB/PWM.o
+                  0x000162         0x61 build/default/production/dspic33fj256gp710aLIB/PWM.o
  .debug_pubnames
-                  0x0001e2        0x100 build/default/production/dspic33fj256gp710aLIB/SPI.o
+                  0x0001c3        0x100 build/default/production/dspic33fj256gp710aLIB/SPI.o
  .debug_pubnames
-                  0x0002e2         0x45 build/default/production/dspic33fj256gp710aLIB/system.o
+                  0x0002c3         0x45 build/default/production/dspic33fj256gp710aLIB/system.o
  .debug_pubnames
-                  0x000327        0x125 build/default/production/dspic33fj256gp710aLIB/timer.o
+                  0x000308        0x125 build/default/production/dspic33fj256gp710aLIB/timer.o
  .debug_pubnames
-                  0x00044c         0xde build/default/production/dspic33fj256gp710aLIB/UART.o
+                  0x00042d         0xde build/default/production/dspic33fj256gp710aLIB/UART.o
  .debug_pubnames
-                  0x00052a         0xa8 build/default/production/dspic33fj256gp710aLIB/DMA.o
+                  0x00050b         0xa8 build/default/production/dspic33fj256gp710aLIB/DMA.o
  .debug_pubnames
-                  0x0005d2         0xf1 build/default/production/main.o
+                  0x0005b3         0xf1 build/default/production/main.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -1901,40 +1897,38 @@ __c30_signature
  __c30_signature
                   0x000c74          0x6 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(data_init_standard.o)
 
-_0000000005A17D2065b344f7
+_0000000006206D2065b35193
                     0x7f08         0xf8
- _0000000005A17D2065b344f7
+ _0000000006206D2065b35193
                     0x7f08         0xf8 build/default/production/dspic33fj256gp710aLIB/DMA.o
                     0x7f08                  _TxBuffer
 
-.nbss               0x0800         0x20
+.nbss               0x0800         0x1c
  .nbss              0x0800          0x8 build/default/production/dspic33fj256gp710aLIB/timer.o
  .nbss              0x0808          0x8 build/default/production/main.o
                     0x0808                  _millis
                     0x080c                  _testflag
                     0x080e                  _c
- .nbss              0x0810          0x6 build/default/production/dspic33fj256gp710aLIB/AT45DB021D.o
-                    0x0810                  _buffer_pointer
-                    0x0812                  _RW_mode
- .nbss              0x0816          0x4 build/default/production/dspic33fj256gp710aLIB/SPI.o
-                    0x0816                  _cs1
- .nbss              0x081a          0x2 build/default/production/dspic33fj256gp710aLIB/ADC.o
- .nbss              0x081c          0x2 build/default/production/dspic33fj256gp710aLIB/UART.o
-                    0x081c                  _UART1_RxInterruptHandler
- .nbss              0x081e          0x2 build/default/production/dspic33fj256gp710aLIB/DMA.o
+ .nbss              0x0810          0x4 build/default/production/dspic33fj256gp710aLIB/SPI.o
+                    0x0810                  _cs1
+ .nbss              0x0814          0x2 build/default/production/dspic33fj256gp710aLIB/ADC.o
+ .nbss              0x0816          0x2 build/default/production/dspic33fj256gp710aLIB/AT45DB021D.o
+ .nbss              0x0818          0x2 build/default/production/dspic33fj256gp710aLIB/UART.o
+                    0x0818                  _UART1_RxInterruptHandler
+ .nbss              0x081a          0x2 build/default/production/dspic33fj256gp710aLIB/DMA.o
 
-.ndata              0x0820          0x2
- .ndata             0x0820          0x2 build/default/production/main.o
-                    0x0820                  _flashPage
+.ndata              0x081c          0x2
+ .ndata             0x081c          0x2 build/default/production/main.o
+                    0x081c                  _flashPage
 
-.bss                0x0822         0x32
- .bss               0x0822         0x32 build/default/production/main.o
-                    0x0822                  _test_read_char
+.bss                0x081e         0x32
+ .bss               0x081e         0x32 build/default/production/main.o
+                    0x081e                  _test_read_char
 
-.data               0x0854         0x24
- .data              0x0854         0x24 build/default/production/main.o
-                    0x0854                  _testmessage
-                    0x0861                  _test_char
+.data               0x0850         0x24
+ .data              0x0850         0x24 build/default/production/main.o
+                    0x0850                  _testmessage
+                    0x085d                  _test_char
 
 .ivt._ADC1Interrupt
                   0x00002e          0x2
@@ -1995,7 +1989,7 @@ _0000000005A17D2065b344f7
  .ivt._DMA0Interrupt
                   0x00001c          0x2 build/default/production/dspic33fj256gp710aLIB/DMA.o
 
-.text             0x00043a        0xb84
+.text             0x00043a        0xbb4
  .text            0x00043a        0x21c build/default/production/dspic33fj256gp710aLIB/UART.o
                   0x00043a                  _init_uart
                   0x000448                  _init_uart1
@@ -2006,83 +2000,83 @@ _0000000005A17D2065b344f7
                   0x000638                  _UART1_SetRXInterruptHandler
                   0x000644                  build/default/production/dspic33fj256gp710aLIB/UART.o:_UART1_RxDefaultInterruptHandler
                   0x000650                  _init_uart2
- .text            0x000656        0x1c2 build/default/production/dspic33fj256gp710aLIB/AT45DB021D.o
+ .text            0x000656        0x1ce build/default/production/dspic33fj256gp710aLIB/AT45DB021D.o
                   0x000656                  _init_Flash
                   0x000668                  _flash_readwriteRegister
                   0x000674                  _flash_status_rdy
                   0x000694                  _flash_read_page
-                  0x00075a                  _flash_write_page
- .text            0x000818        0x16c build/default/production/dspic33fj256gp710aLIB/SPI.o
-                  0x000818                  _init_SPI
-                  0x000824                  _initSPI1
-                  0x000856                  _setSPI1MODE
-                  0x000890                  _sendSPI1byte
-                  0x00089c                  _sendSPI1BUF
-                  0x0008b6                  _readSPI1BUF
-                  0x0008cc                  _SPI1_Write_object
-                  0x00091a                  _SPI1_OverflowCallbackRegister
-                  0x000926                  build/default/production/dspic33fj256gp710aLIB/SPI.o:_SPI1_DefaultOverflowCallback
-                  0x00092c                  _initSPI2
-                  0x000954                  _sendSPI2BUF
-                  0x00096e                  _readSPI2BUF
- .text            0x000984        0x132 build/default/production/dspic33fj256gp710aLIB/ADC.o
-                  0x000984                  _init_ADC
-                  0x00098c                  _initADC1
-                  0x000a04                  _ADC1_OverflowCallbackRegister
-                  0x000a10                  build/default/production/dspic33fj256gp710aLIB/ADC.o:_ADC1_DefaultOverflowCallback
-                  0x000a16                  _initADC2
- .text            0x000ab6        0x124 build/default/production/main.o
-                  0x000ab6                  _T1_callback
-                  0x000afc                  _dma_testcallback
-                  0x000b20                  _init_INT_callback
-                  0x000b2e                  _init_run_callback
-                  0x000b38                  _SaveConfig
-                  0x000b6e                  _ReadConfig
-                  0x000bc2                  _setup
-                  0x000bd0                  _main
- .text            0x000bda         0xfe build/default/production/dspic33fj256gp710aLIB/CAN.o
-                  0x000bda                  _init_CAN
-                  0x000be2                  _initCAN1
- .text            0x000cd8         0xe6 build/default/production/dspic33fj256gp710aLIB/gpio.o
-                  0x000cd8                  _init_GPIO
-                  0x000db2                  _extIntPin
- .text            0x000dbe         0xde build/default/production/dspic33fj256gp710aLIB/timer.o
-                  0x000dbe                  _init_timer
-                  0x000dc8                  _init_T1
-                  0x000df4                  _Timer1_OverflowCallbackRegister
-                  0x000e00                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer1_DefaultOverflowCallback
-                  0x000e06                  _init_T2
-                  0x000e24                  _Timer2_OverflowCallbackRegister
-                  0x000e30                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer2_DefaultOverflowCallback
-                  0x000e36                  _init_T3
-                  0x000e58                  _Timer3_OverflowCallbackRegister
-                  0x000e64                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer3_DefaultOverflowCallback
-                  0x000e6a                  _init_T8
-                  0x000e8a                  _Timer8_OverflowCallbackRegister
-                  0x000e96                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer8_DefaultOverflowCallback
- .text            0x000e9c         0xac build/default/production/dspic33fj256gp710aLIB/DMA.o
-                  0x000e9c                  _init_DMA
-                  0x000ea4                  _initDMA0
-                  0x000ee2                  _set_DMA0CNT
-                  0x000eee                  _set_buffer
-                  0x000f26                  _start_dma
-                  0x000f30                  _DMA0_OverflowCallbackRegister
-                  0x000f3c                  build/default/production/dspic33fj256gp710aLIB/DMA.o:_DMA0_DefaultOverflowCallback
-                  0x000f42                  _initDMA1
- .text            0x000f48         0x76 build/default/production/dspic33fj256gp710aLIB/system.o
-                  0x000f48                  _init_system
-                  0x000f5e                  _init_add_on
-                  0x000f66                  _setAbsoluteEnv
+                  0x000760                  _flash_write_page
+ .text            0x000824        0x16c build/default/production/dspic33fj256gp710aLIB/SPI.o
+                  0x000824                  _init_SPI
+                  0x000830                  _initSPI1
+                  0x000862                  _setSPI1MODE
+                  0x00089c                  _sendSPI1byte
+                  0x0008a8                  _sendSPI1BUF
+                  0x0008c2                  _readSPI1BUF
+                  0x0008d8                  _SPI1_Write_object
+                  0x000926                  _SPI1_OverflowCallbackRegister
+                  0x000932                  build/default/production/dspic33fj256gp710aLIB/SPI.o:_SPI1_DefaultOverflowCallback
+                  0x000938                  _initSPI2
+                  0x000960                  _sendSPI2BUF
+                  0x00097a                  _readSPI2BUF
+ .text            0x000990        0x148 build/default/production/main.o
+                  0x000990                  _T1_callback
+                  0x0009d6                  _dma_testcallback
+                  0x0009fa                  _init_INT_callback
+                  0x000a08                  _init_run_callback
+                  0x000a12                  _SaveConfig
+                  0x000a4a                  _ReadConfig
+                  0x000aa0                  _setup
+                  0x000aae                  _main
+ .text            0x000ad8        0x132 build/default/production/dspic33fj256gp710aLIB/ADC.o
+                  0x000ad8                  _init_ADC
+                  0x000ae0                  _initADC1
+                  0x000b58                  _ADC1_OverflowCallbackRegister
+                  0x000b64                  build/default/production/dspic33fj256gp710aLIB/ADC.o:_ADC1_DefaultOverflowCallback
+                  0x000b6a                  _initADC2
+ .text            0x000c0a         0xfe build/default/production/dspic33fj256gp710aLIB/CAN.o
+                  0x000c0a                  _init_CAN
+                  0x000c12                  _initCAN1
+ .text            0x000d08         0xe6 build/default/production/dspic33fj256gp710aLIB/gpio.o
+                  0x000d08                  _init_GPIO
+                  0x000de2                  _extIntPin
+ .text            0x000dee         0xde build/default/production/dspic33fj256gp710aLIB/timer.o
+                  0x000dee                  _init_timer
+                  0x000df8                  _init_T1
+                  0x000e24                  _Timer1_OverflowCallbackRegister
+                  0x000e30                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer1_DefaultOverflowCallback
+                  0x000e36                  _init_T2
+                  0x000e54                  _Timer2_OverflowCallbackRegister
+                  0x000e60                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer2_DefaultOverflowCallback
+                  0x000e66                  _init_T3
+                  0x000e88                  _Timer3_OverflowCallbackRegister
+                  0x000e94                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer3_DefaultOverflowCallback
+                  0x000e9a                  _init_T8
+                  0x000eba                  _Timer8_OverflowCallbackRegister
+                  0x000ec6                  build/default/production/dspic33fj256gp710aLIB/timer.o:_Timer8_DefaultOverflowCallback
+ .text            0x000ecc         0xac build/default/production/dspic33fj256gp710aLIB/DMA.o
+                  0x000ecc                  _init_DMA
+                  0x000ed4                  _initDMA0
+                  0x000f12                  _set_DMA0CNT
+                  0x000f1e                  _set_buffer
+                  0x000f56                  _start_dma
+                  0x000f60                  _DMA0_OverflowCallbackRegister
+                  0x000f6c                  build/default/production/dspic33fj256gp710aLIB/DMA.o:_DMA0_DefaultOverflowCallback
+                  0x000f72                  _initDMA1
+ .text            0x000f78         0x76 build/default/production/dspic33fj256gp710aLIB/system.o
+                  0x000f78                  _init_system
+                  0x000f8e                  _init_add_on
+                  0x000f96                  _setAbsoluteEnv
 
-.dinit            0x000fbe         0x5e
- .dinit           0x000fbe         0x5e data_init
+.dinit            0x000fee         0x5e
+ .dinit           0x000fee         0x5e data_init
 
-.text             0x00101c         0x70
- .text            0x00101c         0x58 build/default/production/dspic33fj256gp710aLIB/PWM.o
-                  0x00101c                  _init_PWM1
-                  0x001034                  _turnOffPWM1
-                  0x001042                  _set_pwm1_duty
-                  0x00104e                  _turnOnPWM2
-                  0x001066                  _turnOffPWM2
- .text            0x001074         0x18 build/default/production/dspic33fj256gp710aLIB/MCP3201.o
-                  0x001074                  _init3201
+.text             0x00104c         0x70
+ .text            0x00104c         0x58 build/default/production/dspic33fj256gp710aLIB/PWM.o
+                  0x00104c                  _init_PWM1
+                  0x001064                  _turnOffPWM1
+                  0x001072                  _set_pwm1_duty
+                  0x00107e                  _turnOnPWM2
+                  0x001096                  _turnOffPWM2
+ .text            0x0010a4         0x18 build/default/production/dspic33fj256gp710aLIB/MCP3201.o
+                  0x0010a4                  _init3201

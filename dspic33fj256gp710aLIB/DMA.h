@@ -81,10 +81,6 @@ DMAXREQbits.IRQSEL: DMA Peripheral IRQ Number Select bits
 //uint8_t uart1_rx_buf[100];
 //uint8_t uart2_tx_buf[100];
 //uint8_t uart2_rx_buf[100];
-//uint8_t spi1_tx_buf[100];
-//uint8_t spi1_rx_buf[100];
-//uint8_t spi2_tx_buf[100];
-//uint8_t spi2_rx_buf[100];
 //uint16_t adc1_buf[100];
 //uint16_t adc2_buf[100];
     
