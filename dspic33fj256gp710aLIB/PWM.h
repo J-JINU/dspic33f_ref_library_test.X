@@ -17,11 +17,12 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
-
-void initTimer2();
+    
+void init_PWM();
+void init_PWM1();
 void turnOnPWM1();
 void turnOffPWM1();
-void initTimer3();
+void set_pwm1_duty(uint16_t duty);
 void turnOnPWM2();
 void turnOffPWM2();
 

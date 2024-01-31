@@ -1,6 +1,12 @@
 #include "PWM.h"
 #include "timer.h"
 
+//PWM은 8채널까지 사용가능하다
+
+void init_PWM(){
+    init_PWM1();
+    
+}
 
 void init_PWM1(){
     //need timer

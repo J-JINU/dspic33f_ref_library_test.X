@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=dspic33fj256gp710aLIB/ADC.c dspic33fj256gp710aLIB/AT45DB021D.c dspic33fj256gp710aLIB/CAN.c dspic33fj256gp710aLIB/gpio.c dspic33fj256gp710aLIB/MCP3201.c dspic33fj256gp710aLIB/PWM.c dspic33fj256gp710aLIB/SPI.c dspic33fj256gp710aLIB/system.c dspic33fj256gp710aLIB/timer.c dspic33fj256gp710aLIB/UART.c dspic33fj256gp710aLIB/DMA.c main.c dspic33fj256gp710aLIB/InputCapture.c
+SOURCEFILES_QUOTED_IF_SPACED=dspic33fj256gp710aLIB/ADC.c dspic33fj256gp710aLIB/AT45DB021D.c dspic33fj256gp710aLIB/CAN.c dspic33fj256gp710aLIB/gpio.c dspic33fj256gp710aLIB/MCP3201.c dspic33fj256gp710aLIB/PWM.c dspic33fj256gp710aLIB/SPI.c dspic33fj256gp710aLIB/system.c dspic33fj256gp710aLIB/timer.c dspic33fj256gp710aLIB/UART.c dspic33fj256gp710aLIB/DMA.c dspic33fj256gp710aLIB/InputCapture.c main.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/dspic33fj256gp710aLIB/ADC.o ${OBJECTDIR}/dspic33fj256gp710aLIB/AT45DB021D.o ${OBJECTDIR}/dspic33fj256gp710aLIB/CAN.o ${OBJECTDIR}/dspic33fj256gp710aLIB/gpio.o ${OBJECTDIR}/dspic33fj256gp710aLIB/MCP3201.o ${OBJECTDIR}/dspic33fj256gp710aLIB/PWM.o ${OBJECTDIR}/dspic33fj256gp710aLIB/SPI.o ${OBJECTDIR}/dspic33fj256gp710aLIB/system.o ${OBJECTDIR}/dspic33fj256gp710aLIB/timer.o ${OBJECTDIR}/dspic33fj256gp710aLIB/UART.o ${OBJECTDIR}/dspic33fj256gp710aLIB/DMA.o ${OBJECTDIR}/main.o ${OBJECTDIR}/dspic33fj256gp710aLIB/InputCapture.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/dspic33fj256gp710aLIB/ADC.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/AT45DB021D.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/CAN.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/gpio.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/MCP3201.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/PWM.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/SPI.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/system.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/timer.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/UART.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/DMA.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/InputCapture.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/dspic33fj256gp710aLIB/ADC.o ${OBJECTDIR}/dspic33fj256gp710aLIB/AT45DB021D.o ${OBJECTDIR}/dspic33fj256gp710aLIB/CAN.o ${OBJECTDIR}/dspic33fj256gp710aLIB/gpio.o ${OBJECTDIR}/dspic33fj256gp710aLIB/MCP3201.o ${OBJECTDIR}/dspic33fj256gp710aLIB/PWM.o ${OBJECTDIR}/dspic33fj256gp710aLIB/SPI.o ${OBJECTDIR}/dspic33fj256gp710aLIB/system.o ${OBJECTDIR}/dspic33fj256gp710aLIB/timer.o ${OBJECTDIR}/dspic33fj256gp710aLIB/UART.o ${OBJECTDIR}/dspic33fj256gp710aLIB/DMA.o ${OBJECTDIR}/dspic33fj256gp710aLIB/InputCapture.o ${OBJECTDIR}/main.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/dspic33fj256gp710aLIB/ADC.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/AT45DB021D.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/CAN.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/gpio.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/MCP3201.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/PWM.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/SPI.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/system.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/timer.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/UART.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/DMA.o.d ${OBJECTDIR}/dspic33fj256gp710aLIB/InputCapture.o.d ${OBJECTDIR}/main.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/dspic33fj256gp710aLIB/ADC.o ${OBJECTDIR}/dspic33fj256gp710aLIB/AT45DB021D.o ${OBJECTDIR}/dspic33fj256gp710aLIB/CAN.o ${OBJECTDIR}/dspic33fj256gp710aLIB/gpio.o ${OBJECTDIR}/dspic33fj256gp710aLIB/MCP3201.o ${OBJECTDIR}/dspic33fj256gp710aLIB/PWM.o ${OBJECTDIR}/dspic33fj256gp710aLIB/SPI.o ${OBJECTDIR}/dspic33fj256gp710aLIB/system.o ${OBJECTDIR}/dspic33fj256gp710aLIB/timer.o ${OBJECTDIR}/dspic33fj256gp710aLIB/UART.o ${OBJECTDIR}/dspic33fj256gp710aLIB/DMA.o ${OBJECTDIR}/main.o ${OBJECTDIR}/dspic33fj256gp710aLIB/InputCapture.o
+OBJECTFILES=${OBJECTDIR}/dspic33fj256gp710aLIB/ADC.o ${OBJECTDIR}/dspic33fj256gp710aLIB/AT45DB021D.o ${OBJECTDIR}/dspic33fj256gp710aLIB/CAN.o ${OBJECTDIR}/dspic33fj256gp710aLIB/gpio.o ${OBJECTDIR}/dspic33fj256gp710aLIB/MCP3201.o ${OBJECTDIR}/dspic33fj256gp710aLIB/PWM.o ${OBJECTDIR}/dspic33fj256gp710aLIB/SPI.o ${OBJECTDIR}/dspic33fj256gp710aLIB/system.o ${OBJECTDIR}/dspic33fj256gp710aLIB/timer.o ${OBJECTDIR}/dspic33fj256gp710aLIB/UART.o ${OBJECTDIR}/dspic33fj256gp710aLIB/DMA.o ${OBJECTDIR}/dspic33fj256gp710aLIB/InputCapture.o ${OBJECTDIR}/main.o
 
 # Source Files
-SOURCEFILES=dspic33fj256gp710aLIB/ADC.c dspic33fj256gp710aLIB/AT45DB021D.c dspic33fj256gp710aLIB/CAN.c dspic33fj256gp710aLIB/gpio.c dspic33fj256gp710aLIB/MCP3201.c dspic33fj256gp710aLIB/PWM.c dspic33fj256gp710aLIB/SPI.c dspic33fj256gp710aLIB/system.c dspic33fj256gp710aLIB/timer.c dspic33fj256gp710aLIB/UART.c dspic33fj256gp710aLIB/DMA.c main.c dspic33fj256gp710aLIB/InputCapture.c
+SOURCEFILES=dspic33fj256gp710aLIB/ADC.c dspic33fj256gp710aLIB/AT45DB021D.c dspic33fj256gp710aLIB/CAN.c dspic33fj256gp710aLIB/gpio.c dspic33fj256gp710aLIB/MCP3201.c dspic33fj256gp710aLIB/PWM.c dspic33fj256gp710aLIB/SPI.c dspic33fj256gp710aLIB/system.c dspic33fj256gp710aLIB/timer.c dspic33fj256gp710aLIB/UART.c dspic33fj256gp710aLIB/DMA.c dspic33fj256gp710aLIB/InputCapture.c main.c
 
 
 
@@ -155,17 +155,17 @@ ${OBJECTDIR}/dspic33fj256gp710aLIB/DMA.o: dspic33fj256gp710aLIB/DMA.c  .generate
 	@${RM} ${OBJECTDIR}/dspic33fj256gp710aLIB/DMA.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  dspic33fj256gp710aLIB/DMA.c  -o ${OBJECTDIR}/dspic33fj256gp710aLIB/DMA.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/dspic33fj256gp710aLIB/DMA.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/88b286e3bc353b190a1d349e6ea658a3f7d83324 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.o.d 
-	@${RM} ${OBJECTDIR}/main.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/main.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
 ${OBJECTDIR}/dspic33fj256gp710aLIB/InputCapture.o: dspic33fj256gp710aLIB/InputCapture.c  .generated_files/flags/default/21dcea637ecd2afa973981446ab84b2c35b4522b .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/dspic33fj256gp710aLIB" 
 	@${RM} ${OBJECTDIR}/dspic33fj256gp710aLIB/InputCapture.o.d 
 	@${RM} ${OBJECTDIR}/dspic33fj256gp710aLIB/InputCapture.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  dspic33fj256gp710aLIB/InputCapture.c  -o ${OBJECTDIR}/dspic33fj256gp710aLIB/InputCapture.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/dspic33fj256gp710aLIB/InputCapture.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/88b286e3bc353b190a1d349e6ea658a3f7d83324 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/main.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 else
 ${OBJECTDIR}/dspic33fj256gp710aLIB/ADC.o: dspic33fj256gp710aLIB/ADC.c  .generated_files/flags/default/ff9e88d87fef9fec8ca20ef3547f30e50cd63887 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
@@ -234,17 +234,17 @@ ${OBJECTDIR}/dspic33fj256gp710aLIB/DMA.o: dspic33fj256gp710aLIB/DMA.c  .generate
 	@${RM} ${OBJECTDIR}/dspic33fj256gp710aLIB/DMA.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  dspic33fj256gp710aLIB/DMA.c  -o ${OBJECTDIR}/dspic33fj256gp710aLIB/DMA.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/dspic33fj256gp710aLIB/DMA.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/c16b93dbbd96c4881832d1dbbe879006096297cc .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.o.d 
-	@${RM} ${OBJECTDIR}/main.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/main.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
 ${OBJECTDIR}/dspic33fj256gp710aLIB/InputCapture.o: dspic33fj256gp710aLIB/InputCapture.c  .generated_files/flags/default/a39b93194e1c9d48a5541236d17ba39f37560019 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/dspic33fj256gp710aLIB" 
 	@${RM} ${OBJECTDIR}/dspic33fj256gp710aLIB/InputCapture.o.d 
 	@${RM} ${OBJECTDIR}/dspic33fj256gp710aLIB/InputCapture.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  dspic33fj256gp710aLIB/InputCapture.c  -o ${OBJECTDIR}/dspic33fj256gp710aLIB/InputCapture.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/dspic33fj256gp710aLIB/InputCapture.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/c16b93dbbd96c4881832d1dbbe879006096297cc .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/main.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 endif
 
@@ -291,7 +291,7 @@ endif
 # Enable dependency checking
 .dep.inc: .depcheck-impl
 
-DEPFILES=$(shell mplabwildcard ${POSSIBLE_DEPFILES})
+DEPFILES=$(wildcard ${POSSIBLE_DEPFILES})
 ifneq (${DEPFILES},)
 include ${DEPFILES}
 endif
