@@ -1,8 +1,35 @@
-회사에서 사용중인 MCU
+# DSPIC33FJXXXGPXXXA
 
-사내에 있는 레퍼런스 코드가 마땅한게 없어서 직접 만들고 있습니다.
+## 개요
+ 2009년에 출시된 microchip의 dspic33fj시리즈입니다.
 
-2009년에 출시된 microchip의 dspic33fj356gp710a입니다. dspic33fj계열에는 공통으로 사용가능할 것으로 생각됩니다.
-기본 peripheral 을 정의하는 중입니다.
 
-NVM을 사용할 수 있긴 하지만 NVM을 사용하지 않고 외부에 flash 메모리(AT45db021d)를 달아서 사용중입니다.관련 코드도 업로드했습니다.
+## main content
+- system
+- NVM
+- DMA
+- GPIO
+- TIMER
+- Input Capture
+- Output Compare
+- SPI
+- I2C
+- UART
+- CAN
+- ADC
+
+## sub content
+- AT45DB021D(Flash Memory)
+
+## big update
+> 23/01/2024 start
+
+> 23/02/01
+1. system
+2. DMA(uart, adc)
+3. GPIO
+4. TIMER
+5. Output Compare(PWM)
+6. SPI
+7. UART
+8. ADC
