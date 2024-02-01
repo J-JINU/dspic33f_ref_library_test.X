@@ -18,6 +18,14 @@
 *.obj
 *.elf
 *.d
+*.log
+*.inx
+
+# Folder
+.\build\
+.\debug\
+.\dist\
+.\*.*\
 
 # Executables
 *.exe
