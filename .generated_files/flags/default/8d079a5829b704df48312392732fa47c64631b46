@@ -1,1 +1,0 @@
- -c -mcpu=$(MP_PROCESSOR_OPTION)        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"C:\Users\THESYSTEM\Documents\project\datasheet\MCU\dspic\dspic33f\dspic33f_ref_library_test.X\dspic33fj256gp710aLIB\UART.c
