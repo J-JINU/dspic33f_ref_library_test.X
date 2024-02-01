@@ -1,4 +1,4 @@
-build/default/production/dspic33fj256gp710aLIB/system.o: \
+build/default/debug/dspic33fj256gp710aLIB/system.o: \
  dspic33fj256gp710aLIB/system.c dspic33fj256gp710aLIB/system.h \
  dspic33fj256gp710aLIB/ADC.h dspic33fj256gp710aLIB/AT45DB021D.h \
  dspic33fj256gp710aLIB/SPI.h dspic33fj256gp710aLIB/CAN.h \

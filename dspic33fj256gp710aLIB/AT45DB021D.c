@@ -1,5 +1,7 @@
 #include "AT45DB021D.h"
 
+//SPI몇번인지 확인할것
+
 static uint8_t (*flash_readwrite)(uint16_t);
 
 void init_Flash(){
