@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <executable name="dist/default/production/dspic33f_ref_library_test.X.production.elf">
+    <memory name="data">
+      <units>bytes</units>
+      <length>30720</length>
+      <used>462</used>
+      <free>30258</free>
+    </memory>
+    <memory name="program">
+      <units>bytes</units>
+      <length>261888</length>
+      <used>5613</used>
+      <free>256275</free>
+    </memory>
+  </executable>
+</project>
