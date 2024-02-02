@@ -136,7 +136,7 @@ void __attribute__((interrupt, no_auto_psv)) _U1RXInterrupt(void)
     static unsigned long timeout_count;
     static uint8_t temp = 0;
     _U1RXIF = 0;
-    if((timecount - timeout_count) > 5){
+    if((*timecount - timeout_count) > 5){
     /*
      * byte간 timeout으로 5ms선정
      * 5ms의 근거:9600bps는 1초에 960bytes 전송함
@@ -158,10 +158,10 @@ void __attribute__((interrupt, no_auto_psv)) _U1RXInterrupt(void)
          //total_recv_len = len + cmd.size+len.size+checksum.size
     }
     else if(recv_count < total_recv_len){
-        uart1_rx_buf[recv_count] = temp;
+        uart1_rx_buf[recv_count-4] = temp;
     }
     recv_count++;
-    timeout_count = timecount;
+    timeout_count = *timecount;
     if((UART1_RxCompleteInterruptHandler != NULL) && (recv_count == total_recv_len))
     {
         if(chksum == 0){
