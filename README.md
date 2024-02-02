@@ -37,3 +37,5 @@
 > 02/02/24
 >>1. update init adc
 >>* update AD1CSSH/AD1CSSL
+>>* update uart rx timeout
+>>* update uart dma
