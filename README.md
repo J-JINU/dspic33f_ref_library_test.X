@@ -21,15 +21,19 @@
 ## sub content
 - AT45DB021D(Flash Memory)
 
-## big update
+## update
 > 23/01/2024 start
 
 > 23/02/01
-1. system
-2. DMA(uart, adc)
-3. GPIO
-4. TIMER
-5. Output Compare(PWM)
-6. SPI
-7. UART
-8. ADC
+>1. system
+>2. DMA(uart, adc)
+>3. GPIO
+>4. TIMER
+>5. Output Compare(PWM)
+>6. SPI
+>7. UART
+>8. ADC
+
+> 02/02/24
+>>1. update init adc
+>>* update AD1CSSH/AD1CSSL

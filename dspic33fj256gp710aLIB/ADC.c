@@ -21,7 +21,7 @@ void initADC1(){
     AD1CON1bits.AD12B = 1; // 12-bit, 1-channel ADC operation
     AD1CON1bits.ADDMABM = 0; //DMA buffers are written in Scatter/Gather mode. 
     AD1CON1bits.FORM = 0; // integer
-    AD1CON1bits.SSRC = 0b010; //GP timer compare ends sampling and starts conversion
+    AD1CON1bits.SSRC = 0b111; //Clearing sample bit ends sampling and starts conversion
     AD1CON1bits.ASAM = 1; // Sampling begins when SAMP bit is set
 //    AD1CON2
     
@@ -33,20 +33,23 @@ void initADC1(){
 //    AD1CON2bits.VCFG = 3;
     AD1CON2bits.CSCNA = 1;		// Scan Input Selections for CH0+ during Sample A bit
     AD1CON2bits.CHPS = 0; //Converts CH0
-    AD1CON2bits.SMPI = 0;      // Selects Increment Rate for DMA Addresses bits or number of sample/conversion operations per interrupt
+    AD1CON2bits.SMPI = 4;      // Selects Increment Rate for DMA Addresses bits or number of sample/conversion operations per interrupt
     AD1CON2bits.BUFM = 0; // Always starts filling the buffer from the start address
     AD1CON2bits.ALTS = 0; //Always uses channel input selects for Sample A
     
     //    AD1CON3
     
     /*
-     * Tad = Tcy(ADCS + 1) = 25ns * (ADCS + 1) >= 75ns
-     *--> ADCS >= 2
+     * 12bit ADC min Tad = 147ns
+     * Tsamp min value = 3 Tad
+     * use Tsamp = 11 Tad
+     * Tconv(fix value) = 14 Tad
+     * total time = 25 * 1.6 = 40us
      */
-    AD1CON3bits.ADCS = 10;  // TCY · (ADCS<7:0> + 1) = 256 · TCY = TAD
-    AD1CON3bits.SAMC = 16;  // Sampling Time Tsmp = SAMC * Tad
-//    AD1CON4
-    AD1CON4bits.DMABL = 3;  // Selects number of DMA buffer locations per analog input bits 갯수 - 1
+    AD1CON3bits.ADCS = 63;  // TCY · (ADCS<7:0> + 1) = TAD = 64*25 = 1.6us
+    AD1CON3bits.SAMC = 11;  // Sampling Time Tsmp = SAMC * Tad
+//    AD1CON4 
+    AD1CON4bits.DMABL = 0;  // Selects number of DMA buffer locations per analog input bits 갯수 - 1
     
     /*  AD1CHS
      *                       MUXA MUXB
@@ -65,20 +68,18 @@ void initADC1(){
 //    AD1CHS123bits.CH123SB = 1;      //AN345
 //    AD1CHS123bits.CH123NA = 0;      //MUX A Vrefl
 //    AD1CHS123bits.CH123SA = 0;      //AN012 
-//    AD1CSSH
-    AD1CSSL = 0;
-    AD1CSSLbits.CSS0 = 1;
-//    AD1PCFGH
+
     AD1PCFGH = 0xFFFF;      //Analog High port -> Digital pin
-//    AD1PCFGL
-    AD1PCFGL = 0xFFFF;
+    AD1PCFGL = 0xFFE0;
+    
+    AD1CSSH = ~AD1PCFGH;
+    AD1CSSL = ~AD1PCFGL;
     AD1PCFGLbits.PCFG0 = 0;
     ADC1_OverflowCallbackRegister(ADC1_DefaultOverflowCallback);
     _AD1IF = 0;
-    _AD1IE = 1;
+    _AD1IE = 0;
     AD1CON1bits.ADON = 1;
 }
-
 void __attribute__((interrupt, no_auto_psv)) _ADC1Interrupt(void) { 
     _AD1IF = 0;
     if(ADC1_OverflowCallback)

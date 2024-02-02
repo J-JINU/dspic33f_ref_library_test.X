@@ -81,6 +81,7 @@ nbdist/
 nbactions.xml
 nb-configuration.xml
 funclist
+nbproject/
 nbproject/Makefile-*
 disassembly/
 .generated_files/
