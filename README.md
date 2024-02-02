@@ -35,7 +35,6 @@
 >8. ADC
 
 > 02/02/24
->>1. update init adc
->>* update AD1CSSH/AD1CSSL
->>* update uart rx timeout
->>* update uart dma
+>1. update AD1CSSH/AD1CSSL in ADC.c
+>2. update uart rx timeout in UART.c
+>3. update uart dma in DMA.c
