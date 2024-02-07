@@ -11,6 +11,7 @@
             <sourceRootList>
                 <sourceRootElem>C:/Users/THESYSTEM/Documents/project/datasheet/MCU/dspic/dspic33f/dspic33fj256gp710aLIB</sourceRootElem>
                 <sourceRootElem>dspic33fj256gp710aLIB</sourceRootElem>
+                <sourceRootElem>third_party_peripheral</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

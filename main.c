@@ -4,8 +4,9 @@
  *
  * Created on 2024년 1월 18일 (목), 오후 4:36
  */
-#include "dspic33fj256gp710aLIB/system.h"
-#include "dspic33fj256gp710aLIB/DMA.h"
+#include "main.h"
+#include "dspic33fj256gp710aLIB/system/system.h"
+#include "dspic33fj256gp710aLIB/DMA/DMA.h"
 
 
 

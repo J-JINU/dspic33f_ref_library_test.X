@@ -17,16 +17,15 @@ extern "C" {
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include "ADC.h"
-#include "AT45DB021D.h"
-#include "CAN.h"
-#include "PWM.h"
-#include "SPI.h"
-#include "gpio.h"
-#include "UART.h"
-#include "system.h"
-#include "timer.h"
-#include "InputCapture.h"
+#include "../ADC/ADC.h"
+#include "../../third_party_peripheral/AT45DB021D/AT45DB021D.h"
+#include "../CAN/CAN.h"
+#include "../PWM/PWM.h"
+#include "../SPI/SPI.h"
+#include "../GPIO/gpio.h"
+#include "../UART/UART.h"
+#include "../TIMER/timer.h"
+#include "../IC/InputCapture.h"
 
 void init_system();
 void setAbsoluteEnv();

@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "SPI.h"
+#include "../../dspic33fj256gp710aLIB/SPI/SPI.h"
 
 //Flash Memory Spec
 //페이지당 264바이트이다. 하지만 페이지의 가장 앞 8바이트는 내가 사용하지 않는다.

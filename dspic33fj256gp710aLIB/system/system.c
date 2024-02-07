@@ -1,5 +1,4 @@
 #include "system.h"
-#include "DMA.h"
 
 /* MCU Environment SET */
 #define FCY 40000000UL

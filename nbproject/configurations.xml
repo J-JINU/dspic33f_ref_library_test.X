@@ -7,20 +7,50 @@
       <logicalFolder name="dspic33fj256gp710aLIB"
                      displayName="dspic33fj256gp710aLIB"
                      projectFiles="true">
-        <itemPath>dspic33fj256gp710aLIB/ADC.h</itemPath>
-        <itemPath>dspic33fj256gp710aLIB/AT45DB021D.h</itemPath>
-        <itemPath>dspic33fj256gp710aLIB/CAN.h</itemPath>
-        <itemPath>dspic33fj256gp710aLIB/gpio.h</itemPath>
-        <itemPath>dspic33fj256gp710aLIB/MCP3201.h</itemPath>
-        <itemPath>dspic33fj256gp710aLIB/PWM.h</itemPath>
-        <itemPath>dspic33fj256gp710aLIB/SPI.h</itemPath>
-        <itemPath>dspic33fj256gp710aLIB/system.h</itemPath>
-        <itemPath>dspic33fj256gp710aLIB/timer.h</itemPath>
-        <itemPath>dspic33fj256gp710aLIB/UART.h</itemPath>
-        <itemPath>dspic33fj256gp710aLIB/DMA.h</itemPath>
+        <logicalFolder name="ADC" displayName="ADC" projectFiles="true">
+          <itemPath>dspic33fj256gp710aLIB/ADC/ADC.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="CAN" displayName="CAN" projectFiles="true">
+          <itemPath>dspic33fj256gp710aLIB/CAN/CAN.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="DMA" displayName="DMA" projectFiles="true">
+          <itemPath>dspic33fj256gp710aLIB/DMA/DMA.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="GPIO" displayName="GPIO" projectFiles="true">
+          <itemPath>dspic33fj256gp710aLIB/GPIO/gpio.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="IC" displayName="IC" projectFiles="true">
+          <itemPath>dspic33fj256gp710aLIB/IC/InputCapture.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="PWM" displayName="PWM" projectFiles="true">
+          <itemPath>dspic33fj256gp710aLIB/PWM/PWM.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="SPI" displayName="SPI" projectFiles="true">
+          <itemPath>dspic33fj256gp710aLIB/SPI/SPI.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="system" displayName="system" projectFiles="true">
+          <itemPath>dspic33fj256gp710aLIB/system/system.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="TIMER" displayName="TIMER" projectFiles="true">
+          <itemPath>dspic33fj256gp710aLIB/TIMER/timer.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="UART" displayName="UART" projectFiles="true">
+          <itemPath>dspic33fj256gp710aLIB/UART/UART.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="third_party_peripheral"
+                     displayName="third_party_peripheral"
+                     projectFiles="true">
+        <logicalFolder name="AT45DB021D" displayName="AT45DB021D" projectFiles="true">
+          <itemPath>third_party_peripheral/AT45DB021D/AT45DB021D.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="MCP3201" displayName="MCP3201" projectFiles="true">
+          <itemPath>third_party_peripheral/MCP3201/MCP3201.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="MODBUS" displayName="MODBUS" projectFiles="true">
+        </logicalFolder>
       </logicalFolder>
       <itemPath>main.h</itemPath>
-      <itemPath>dspic33fj256gp710aLIB/InputCapture.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -32,18 +62,48 @@
       <logicalFolder name="dspic33fj256gp710aLIB"
                      displayName="dspic33fj256gp710aLIB"
                      projectFiles="true">
-        <itemPath>dspic33fj256gp710aLIB/ADC.c</itemPath>
-        <itemPath>dspic33fj256gp710aLIB/AT45DB021D.c</itemPath>
-        <itemPath>dspic33fj256gp710aLIB/CAN.c</itemPath>
-        <itemPath>dspic33fj256gp710aLIB/gpio.c</itemPath>
-        <itemPath>dspic33fj256gp710aLIB/MCP3201.c</itemPath>
-        <itemPath>dspic33fj256gp710aLIB/PWM.c</itemPath>
-        <itemPath>dspic33fj256gp710aLIB/SPI.c</itemPath>
-        <itemPath>dspic33fj256gp710aLIB/system.c</itemPath>
-        <itemPath>dspic33fj256gp710aLIB/timer.c</itemPath>
-        <itemPath>dspic33fj256gp710aLIB/UART.c</itemPath>
-        <itemPath>dspic33fj256gp710aLIB/DMA.c</itemPath>
-        <itemPath>dspic33fj256gp710aLIB/InputCapture.c</itemPath>
+        <logicalFolder name="ADC" displayName="ADC" projectFiles="true">
+          <itemPath>dspic33fj256gp710aLIB/ADC/ADC.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="CAN" displayName="CAN" projectFiles="true">
+          <itemPath>dspic33fj256gp710aLIB/CAN/CAN.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="DMA" displayName="DMA" projectFiles="true">
+          <itemPath>dspic33fj256gp710aLIB/DMA/DMA.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="GPIO" displayName="GPIO" projectFiles="true">
+          <itemPath>dspic33fj256gp710aLIB/GPIO/gpio.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="IC" displayName="IC" projectFiles="true">
+          <itemPath>dspic33fj256gp710aLIB/IC/InputCapture.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="PWM" displayName="PWM" projectFiles="true">
+          <itemPath>dspic33fj256gp710aLIB/PWM/PWM.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="SPI" displayName="SPI" projectFiles="true">
+          <itemPath>dspic33fj256gp710aLIB/SPI/SPI.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="system" displayName="system" projectFiles="true">
+          <itemPath>dspic33fj256gp710aLIB/system/system.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="TIMER" displayName="TIMER" projectFiles="true">
+          <itemPath>dspic33fj256gp710aLIB/TIMER/timer.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="UART" displayName="UART" projectFiles="true">
+          <itemPath>dspic33fj256gp710aLIB/UART/UART.c</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="third_party_peripheral"
+                     displayName="third_party_peripheral"
+                     projectFiles="true">
+        <logicalFolder name="AT45DB021D" displayName="AT45DB021D" projectFiles="true">
+          <itemPath>third_party_peripheral/AT45DB021D/AT45DB021D.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="MCP3201" displayName="MCP3201" projectFiles="true">
+          <itemPath>third_party_peripheral/MCP3201/MCP3201.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="MODBUS" displayName="MODBUS" projectFiles="true">
+        </logicalFolder>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>
@@ -56,6 +116,7 @@
   <sourceRootList>
     <Elem>C:/Users/THESYSTEM/Documents/project/datasheet/MCU/dspic/dspic33f/dspic33fj256gp710aLIB</Elem>
     <Elem>dspic33fj256gp710aLIB</Elem>
+    <Elem>third_party_peripheral</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

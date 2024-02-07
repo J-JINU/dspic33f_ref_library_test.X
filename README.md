@@ -41,3 +41,6 @@
 
 > 06/02/24
 > 1. update uart2 in UART.c
+
+> 07/02/24
+> 1. update directory

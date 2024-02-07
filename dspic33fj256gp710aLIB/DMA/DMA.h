@@ -79,9 +79,10 @@ DMAXREQbits.IRQSEL: DMA Peripheral IRQ Number Select bits
     
     
 void init_DMA();
+uint8_t cal_checksum(uint8_t* buffer, uint16_t size);
 void initDMA0();
 void set_DMA0CNT(uint16_t size);
-void DMA0_OverflowCallbackRegister(void (* CallbackHandler)(void));
+void DMA0_OverflowCallbackRegister(void (* CallbackHandler)(uint16_t adcbuf[]));
 void initDMA1();
 void start_dma();
 
